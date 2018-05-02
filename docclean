@@ -1,0 +1,5 @@
+#!/bin/bash
+docker rm -v $(docker ps -a -q -f status=exited)
+# Remove images that are tagged with <none>
+docker rmi $(docker images | grep \<none\> | tr -s ' ' | cut -d ' ' -f 3)
+

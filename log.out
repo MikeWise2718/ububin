@@ -1,0 +1,173 @@
+2018-04-10 12:40:22.436464: I tensorflow/core/platform/cloud/gcs_file_system.cc:682] GCS DNS cache is disabled, because GCS_RESOLVE_REFRESH_SECS = 0 (or is not set)
+2018-04-10 12:40:22.436515: I tensorflow/core/platform/cloud/gcs_file_system.cc:712] GCS additional header DISABLED. No environment variable set.
+/home/mike/tf27gpu/local/lib/python2.7/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+2018-04-10 12:40:22.818799: I tensorflow/core/platform/cpu_feature_guard.cc:140] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2018-04-10 12:40:22.818821: I tensorflow/core/common_runtime/local_device.cc:40] Local device intra op parallelism threads: 8
+2018-04-10 12:40:22.819560: I tensorflow/core/common_runtime/session_factory.cc:75] SessionFactory type DIRECT_SESSION accepts target: 
+2018-04-10 12:40:22.819572: I tensorflow/core/common_runtime/session_factory.cc:79] SessionFactory type GRPC_SESSION does not accept target: 
+2018-04-10 12:40:22.819621: I tensorflow/core/common_runtime/direct_session.cc:82] Direct session inter op parallelism threads: 8
+2018-04-10 12:40:22.820436: I tensorflow/core/common_runtime/graph_execution_state.cc:77] Graph proto is node {
+  name: "Const"
+  op: "Const"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_STRING
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_STRING
+        tensor_shape {
+        }
+        string_val: "Hello, TensorFlow!"
+      }
+    }
+  }
+}
+versions {
+  producer: 26
+}
+
+2018-04-10 12:40:22.825624: I tensorflow/core/common_runtime/graph_execution_state.cc:247] Mapping _SOURCE to 0
+2018-04-10 12:40:22.825636: I tensorflow/core/common_runtime/graph_execution_state.cc:247] Mapping _SINK to 1
+2018-04-10 12:40:22.825639: I tensorflow/core/common_runtime/graph_execution_state.cc:247] Mapping Const to 2
+2018-04-10 12:40:22.825643: I tensorflow/core/common_runtime/optimization_registry.cc:37] Running optimization phase 0
+2018-04-10 12:40:22.825686: I tensorflow/core/common_runtime/graph_execution_state.cc:385] BuildGraph
+2018-04-10 12:40:22.825742: I tensorflow/core/grappler/grappler_item.cc:76] Add fetch Const:0
+2018-04-10 12:40:22.825763: I tensorflow/core/grappler/optimizers/meta_optimizer.cc:180] Optimizer model_pruner return status: OK. Graph size before: 1 nodes, 0 edges. Graph size after: 1 nodes, 0 edges.
+2018-04-10 12:40:22.825769: I tensorflow/core/grappler/grappler_item.cc:76] Add fetch Const:0
+2018-04-10 12:40:22.825811: I tensorflow/core/grappler/costs/graph_properties.cc:823] Propagating (relax=0) 0 new shapes through 0 loops and 0 resources
+
+2018-04-10 12:40:22.825818: I tensorflow/core/grappler/costs/graph_properties.cc:823] Propagating (relax=1) 0 new shapes through 0 loops and 0 resources
+
+2018-04-10 12:40:22.825821: I tensorflow/core/grappler/costs/graph_properties.cc:1039] Filling in graph properties for node: _SOURCE
+2018-04-10 12:40:22.825824: I tensorflow/core/grappler/costs/graph_properties.cc:1039] Filling in graph properties for node: _SINK
+2018-04-10 12:40:22.825827: I tensorflow/core/grappler/costs/graph_properties.cc:1039] Filling in graph properties for node: Const
+2018-04-10 12:40:22.825831: I tensorflow/core/grappler/costs/graph_properties.cc:290] Nodes with known inputs, but with unknown output dimensions:
+2018-04-10 12:40:22.825834: I tensorflow/core/grappler/costs/graph_properties.cc:342] Op types with known inputs, but with unknown output dimensions (format: <op_type> (<count>)):
+2018-04-10 12:40:22.825854: I tensorflow/core/grappler/optimizers/meta_optimizer.cc:198] Optimizer constant folding return status: OK. Graph size before: 1 nodes, 0 edges. Graph size after: 1 nodes, 0 edges.
+2018-04-10 12:40:22.825861: I tensorflow/core/grappler/grappler_item.cc:76] Add fetch Const:0
+2018-04-10 12:40:22.825886: I tensorflow/core/grappler/costs/graph_properties.cc:823] Propagating (relax=0) 0 new shapes through 0 loops and 0 resources
+
+2018-04-10 12:40:22.825897: I tensorflow/core/grappler/costs/graph_properties.cc:823] Propagating (relax=1) 0 new shapes through 0 loops and 0 resources
+
+2018-04-10 12:40:22.825901: I tensorflow/core/grappler/costs/graph_properties.cc:1039] Filling in graph properties for node: _SOURCE
+2018-04-10 12:40:22.825903: I tensorflow/core/grappler/costs/graph_properties.cc:1039] Filling in graph properties for node: _SINK
+2018-04-10 12:40:22.825906: I tensorflow/core/grappler/costs/graph_properties.cc:1039] Filling in graph properties for node: Const
+2018-04-10 12:40:22.825909: I tensorflow/core/grappler/costs/graph_properties.cc:290] Nodes with known inputs, but with unknown output dimensions:
+2018-04-10 12:40:22.825912: I tensorflow/core/grappler/costs/graph_properties.cc:342] Op types with known inputs, but with unknown output dimensions (format: <op_type> (<count>)):
+2018-04-10 12:40:22.825929: I tensorflow/core/grappler/optimizers/meta_optimizer.cc:198] Optimizer arithmetic_optimizer return status: OK. Graph size before: 1 nodes, 0 edges. Graph size after: 1 nodes, 0 edges.
+2018-04-10 12:40:22.825936: I tensorflow/core/grappler/grappler_item.cc:76] Add fetch Const:0
+2018-04-10 12:40:22.825943: I tensorflow/core/grappler/optimizers/dependency_optimizer.cc:544] Removed 0 out of 0 control dependencies
+2018-04-10 12:40:22.825948: I tensorflow/core/grappler/optimizers/dependency_optimizer.cc:428] Deleted 0 out of 1 nodes.
+2018-04-10 12:40:22.825953: I tensorflow/core/grappler/optimizers/dependency_optimizer.cc:544] Removed 0 out of 0 control dependencies
+2018-04-10 12:40:22.825956: I tensorflow/core/grappler/optimizers/dependency_optimizer.cc:428] Deleted 0 out of 1 nodes.
+2018-04-10 12:40:22.825960: I tensorflow/core/grappler/optimizers/meta_optimizer.cc:198] Optimizer dependency_optimizer return status: OK. Graph size before: 1 nodes, 0 edges. Graph size after: 1 nodes, 0 edges.
+2018-04-10 12:40:22.825968: I tensorflow/core/grappler/optimizers/meta_optimizer.cc:198] Optimizer layout return status: OK. Graph size before: 1 nodes, 0 edges. Graph size after: 1 nodes, 0 edges.
+2018-04-10 12:40:22.826016: I tensorflow/core/grappler/costs/graph_properties.cc:823] Propagating (relax=0) 0 new shapes through 0 loops and 0 resources
+
+2018-04-10 12:40:22.826023: I tensorflow/core/grappler/costs/graph_properties.cc:823] Propagating (relax=1) 0 new shapes through 0 loops and 0 resources
+
+2018-04-10 12:40:22.826026: I tensorflow/core/grappler/costs/graph_properties.cc:1039] Filling in graph properties for node: _SOURCE
+2018-04-10 12:40:22.826028: I tensorflow/core/grappler/costs/graph_properties.cc:1039] Filling in graph properties for node: _SINK
+2018-04-10 12:40:22.826031: I tensorflow/core/grappler/costs/graph_properties.cc:1039] Filling in graph properties for node: Const
+2018-04-10 12:40:22.826034: I tensorflow/core/grappler/costs/graph_properties.cc:290] Nodes with known inputs, but with unknown output dimensions:
+2018-04-10 12:40:22.826037: I tensorflow/core/grappler/costs/graph_properties.cc:342] Op types with known inputs, but with unknown output dimensions (format: <op_type> (<count>)):
+2018-04-10 12:40:22.826054: I tensorflow/core/grappler/costs/virtual_scheduler.cc:444] Added ready node: Const
+2018-04-10 12:40:22.826060: I tensorflow/core/grappler/costs/virtual_placer.cc:117] node.name=Const node.device=/job:localhost/replica:0/task:0/device:CPU:0 is placed on: /job:localhost/replica:0/task:0/device:CPU:0
+2018-04-10 12:40:22.826074: I tensorflow/core/grappler/costs/op_level_cost_estimator.cc:998] Op:Const Execution Time 0 (ns)
+2018-04-10 12:40:22.826081: I tensorflow/core/grappler/costs/op_level_cost_estimator.cc:97] Use minimum shape because the rank is unknown.
+2018-04-10 12:40:22.826085: I tensorflow/core/grappler/costs/op_level_cost_estimator.cc:930] Output Size: 0 Total Output Size:0
+2018-04-10 12:40:22.826090: I tensorflow/core/grappler/costs/op_level_cost_estimator.cc:308] Operation Const takes 0 ns.
+2018-04-10 12:40:22.826098: I tensorflow/core/grappler/costs/virtual_placer.cc:117] node.name=Const node.device=/job:localhost/replica:0/task:0/device:CPU:0 is placed on: /job:localhost/replica:0/task:0/device:CPU:0
+2018-04-10 12:40:22.826111: I tensorflow/core/grappler/costs/virtual_scheduler.cc:783] Op scheduled -- name: Const, op: Const, device: /job:localhost/replica:0/task:0/device:CPU:0, ready: 0, scheduled: 0, finished: 0
+2018-04-10 12:40:22.826123: I tensorflow/core/grappler/costs/virtual_scheduler.cc:843] Expected execution time: 0
+2018-04-10 12:40:22.826126: I tensorflow/core/grappler/costs/virtual_scheduler.cc:844] Expected max memory: 0
+2018-04-10 12:40:22.826129: I tensorflow/core/grappler/costs/virtual_scheduler.cc:845] Expected max per-op buffers: 0
+2018-04-10 12:40:22.826131: I tensorflow/core/grappler/costs/virtual_scheduler.cc:846] Expected max per-op streaming buffers: 0
+2018-04-10 12:40:22.826134: I tensorflow/core/grappler/costs/virtual_scheduler.cc:849] Per-op execution time:
+2018-04-10 12:40:22.826137: I tensorflow/core/grappler/costs/virtual_scheduler.cc:861] Devices:
+2018-04-10 12:40:22.826141: I tensorflow/core/grappler/costs/virtual_scheduler.cc:886] Device = /job:localhost/replica:0/task:0/device:CPU:0, num_nodes = 1, wall_time_ns = 0, memory usage: persistent = 0B, peak = 0B, total = 0B, at the end: 0B
+2018-04-10 12:40:22.826144: I tensorflow/core/grappler/costs/virtual_scheduler.cc:897] Per-op execution time (and memory usage at peak memory usage):
+2018-04-10 12:40:22.826147: I tensorflow/core/grappler/costs/virtual_scheduler.cc:939] Device = /job:localhost/replica:0/task:0/device:CPU:0, total_compute_time_ns = ~0, utilization = 0%
+2018-04-10 12:40:22.826150: I tensorflow/core/grappler/costs/virtual_scheduler.cc:951] Node description, counts, cost:
+2018-04-10 12:40:22.826153: I tensorflow/core/grappler/costs/virtual_scheduler.cc:956] Node: [Op=Const, input_shapes=[], Count: 1, Individual Cost: ~0
+2018-04-10 12:40:22.826156: I tensorflow/core/grappler/costs/virtual_scheduler.cc:961] Critical path execution time: 0
+2018-04-10 12:40:22.826169: I tensorflow/core/grappler/costs/graph_memory.cc:252] At time 0 allocated 0 for tensor Const:0
+2018-04-10 12:40:22.826173: I tensorflow/core/grappler/costs/graph_memory.cc:258] At time 1 deallocated 0 for tensor Const:0
+2018-04-10 12:40:22.826188: I tensorflow/core/grappler/optimizers/meta_optimizer.cc:198] Optimizer memory_optimizer return status: OK. Graph size before: 1 nodes, 0 edges. Graph size after: 1 nodes, 0 edges.
+2018-04-10 12:40:22.826221: I tensorflow/core/graph/subgraph.cc:208] Found fetch node for Const:0
+2018-04-10 12:40:22.826239: I tensorflow/core/graph/algorithm.cc:182] Reverse reach init: _retval_Const_0_0
+2018-04-10 12:40:22.826244: I tensorflow/core/graph/algorithm.cc:191] Reverse reach : _retval_Const_0_0 from Const
+2018-04-10 12:40:22.826246: I tensorflow/core/graph/algorithm.cc:191] Reverse reach : Const from _SOURCE
+2018-04-10 12:40:22.826275: I tensorflow/core/graph/graph_partition.cc:1197] Added send/recv: controls=0, data=0
+2018-04-10 12:40:22.826513: I tensorflow/core/framework/log_memory.cc:35] __LOG_MEMORY__ MemoryLogTensorAllocation { step_id: -6 kernel_name: "Unknown (from Proto)" tensor { dtype: DT_STRING shape { } allocation_description { requested_bytes: 8 allocator_name: "cpu" ptr: 139809156935680 } } }
+2018-04-10 12:40:22.826525: I tensorflow/core/framework/log_memory.cc:35] __LOG_MEMORY__ MemoryLogTensorDeallocation { allocator_name: "cpu" }
+2018-04-10 12:40:22.826533: I tensorflow/core/common_runtime/direct_session.cc:1441] Created 
+() -> (n2:string) {
+  n2 = Const[dtype=string, value=Tensor<type: string shape: [] values: Hello, TensorFlow!>]()
+}
+ for /job:localhost/replica:0/task:0/device:CPU:0
+2018-04-10 12:40:22.826546: I tensorflow/core/common_runtime/function.cc:567] Graph Initial #nodes 4 #edges 4
+2018-04-10 12:40:22.826560: I tensorflow/core/framework/log_memory.cc:35] __LOG_MEMORY__ MemoryLogTensorAllocation { step_id: -6 kernel_name: "Unknown (from Proto)" tensor { dtype: DT_STRING shape { } allocation_description { requested_bytes: 8 allocator_name: "cpu" ptr: 139809156935680 } } }
+2018-04-10 12:40:22.826569: I tensorflow/core/framework/log_memory.cc:35] __LOG_MEMORY__ MemoryLogTensorDeallocation { allocator_name: "cpu" }
+2018-04-10 12:40:22.826576: I tensorflow/core/common_runtime/function.cc:571] || 
+2018-04-10 12:40:22.826579: I tensorflow/core/common_runtime/function.cc:571] || () -> (n2:string) {
+2018-04-10 12:40:22.826582: I tensorflow/core/common_runtime/function.cc:571] ||   n2 = Const[dtype=string, value=Tensor<type: string shape: [] values: Hello, TensorFlow!>]()
+2018-04-10 12:40:22.826584: I tensorflow/core/common_runtime/function.cc:571] || }
+2018-04-10 12:40:22.826586: I tensorflow/core/common_runtime/function.cc:571] || 
+2018-04-10 12:40:22.826589: I tensorflow/core/common_runtime/function.cc:1056] Removing list array converter
+2018-04-10 12:40:22.826593: I tensorflow/core/common_runtime/function.cc:567] Graph Before #nodes 4 #edges 4
+2018-04-10 12:40:22.826603: I tensorflow/core/framework/log_memory.cc:35] __LOG_MEMORY__ MemoryLogTensorAllocation { step_id: -6 kernel_name: "Unknown (from Proto)" tensor { dtype: DT_STRING shape { } allocation_description { requested_bytes: 8 allocator_name: "cpu" ptr: 139809156935680 } } }
+2018-04-10 12:40:22.826609: I tensorflow/core/framework/log_memory.cc:35] __LOG_MEMORY__ MemoryLogTensorDeallocation { allocator_name: "cpu" }
+2018-04-10 12:40:22.826615: I tensorflow/core/common_runtime/function.cc:571] || 
+2018-04-10 12:40:22.826618: I tensorflow/core/common_runtime/function.cc:571] || () -> (n2:string) {
+2018-04-10 12:40:22.826620: I tensorflow/core/common_runtime/function.cc:571] ||   n2 = Const[dtype=string, value=Tensor<type: string shape: [] values: Hello, TensorFlow!>]()
+2018-04-10 12:40:22.826623: I tensorflow/core/common_runtime/function.cc:571] || }
+2018-04-10 12:40:22.826625: I tensorflow/core/common_runtime/function.cc:571] || 
+2018-04-10 12:40:22.826635: I tensorflow/core/common_runtime/constant_folding.cc:571] No constant foldable nodes found
+2018-04-10 12:40:22.826649: I tensorflow/core/common_runtime/function.cc:567] Graph ReCopy #nodes 4 #edges 5
+2018-04-10 12:40:22.826661: I tensorflow/core/framework/log_memory.cc:35] __LOG_MEMORY__ MemoryLogTensorAllocation { step_id: -6 kernel_name: "Unknown (from Proto)" tensor { dtype: DT_STRING shape { } allocation_description { requested_bytes: 8 allocator_name: "cpu" ptr: 139809156935680 } } }
+2018-04-10 12:40:22.826667: I tensorflow/core/framework/log_memory.cc:35] __LOG_MEMORY__ MemoryLogTensorDeallocation { allocator_name: "cpu" }
+2018-04-10 12:40:22.826673: I tensorflow/core/common_runtime/function.cc:571] || 
+2018-04-10 12:40:22.826676: I tensorflow/core/common_runtime/function.cc:571] || () -> (n2:string) {
+2018-04-10 12:40:22.826679: I tensorflow/core/common_runtime/function.cc:571] ||   n2 = Const[dtype=string, value=Tensor<type: string shape: [] values: Hello, TensorFlow!>]()
+2018-04-10 12:40:22.826681: I tensorflow/core/common_runtime/function.cc:571] || }
+2018-04-10 12:40:22.826684: I tensorflow/core/common_runtime/function.cc:571] || 
+2018-04-10 12:40:22.826694: I tensorflow/core/framework/op_kernel.cc:1112] Instantiating kernel for node: _SOURCE = NoOp[]()
+2018-04-10 12:40:22.826703: I tensorflow/core/framework/op_kernel.cc:1112] Instantiating kernel for node: _SINK = NoOp[]()
+2018-04-10 12:40:22.826712: I tensorflow/core/framework/log_memory.cc:35] __LOG_MEMORY__ MemoryLogTensorAllocation { step_id: -6 kernel_name: "Unknown (from Proto)" tensor { dtype: DT_STRING shape { } allocation_description { requested_bytes: 8 allocator_name: "cpu" ptr: 139809156935680 } } }
+2018-04-10 12:40:22.826718: I tensorflow/core/framework/log_memory.cc:35] __LOG_MEMORY__ MemoryLogTensorDeallocation { allocator_name: "cpu" }
+2018-04-10 12:40:22.826722: I tensorflow/core/framework/op_kernel.cc:1112] Instantiating kernel for node: Const = Const[dtype=DT_STRING, value=Tensor<type: string shape: [] values: Hello, TensorFlow!>, _device="/job:localhost/replica:0/task:0/device:CPU:0"]()
+2018-04-10 12:40:22.826735: I tensorflow/core/framework/log_memory.cc:35] __LOG_MEMORY__ MemoryLogTensorAllocation { step_id: -6 kernel_name: "Unknown (from Proto)" tensor { dtype: DT_STRING shape { } allocation_description { requested_bytes: 8 allocator_name: "cpu" ptr: 139809156935680 } } }
+2018-04-10 12:40:22.826744: I tensorflow/core/framework/op_kernel.cc:1112] Instantiating kernel for node: _retval_Const_0_0 = _Retval[T=DT_STRING, index=0, _device="/job:localhost/replica:0/task:0/device:CPU:0"](Const)
+2018-04-10 12:40:22.826763: I tensorflow/core/framework/log_memory.cc:35] __LOG_MEMORY__ MemoryLogStep { step_id: 1 handle: "->Const:0//0/;0" }
+2018-04-10 12:40:22.826812: I tensorflow/core/common_runtime/executor.cc:1560] Process node: 0 step 1 _SOURCE = NoOp[]() is dead: 0
+2018-04-10 12:40:22.826827: I tensorflow/core/common_runtime/executor.cc:1672] Synchronous kernel done: 0 step 1 _SOURCE = NoOp[]() is dead: 0
+2018-04-10 12:40:22.826864: I tensorflow/core/framework/log_memory.cc:35] __LOG_MEMORY__ MemoryLogTensorAllocation { step_id: -6 kernel_name: "Unknown (from Proto)" tensor { dtype: DT_STRING shape { } allocation_description { requested_bytes: 8 allocator_name: "cpu" ptr: 139809007915008 } } }
+2018-04-10 12:40:22.826874: I tensorflow/core/framework/log_memory.cc:35] __LOG_MEMORY__ MemoryLogTensorDeallocation { allocator_name: "cpu" }
+2018-04-10 12:40:22.826880: I tensorflow/core/common_runtime/executor.cc:1560] Process node: 2 step 1 Const = Const[dtype=DT_STRING, value=Tensor<type: string shape: [] values: Hello, TensorFlow!>, _device="/job:localhost/replica:0/task:0/device:CPU:0"]() is dead: 0
+2018-04-10 12:40:22.826888: I tensorflow/core/framework/log_memory.cc:35] __LOG_MEMORY__ MemoryLogTensorOutput { step_id: 1 kernel_name: "Const" tensor { dtype: DT_STRING shape { } allocation_description { requested_bytes: 8 allocator_name: "cpu" ptr: 139809156935680 } } }
+2018-04-10 12:40:22.826896: I tensorflow/core/framework/log_memory.cc:35] __LOG_MEMORY__ MemoryLogTensorAllocation { step_id: -6 kernel_name: "Unknown (from Proto)" tensor { dtype: DT_STRING shape { } allocation_description { requested_bytes: 8 allocator_name: "cpu" ptr: 139809007915008 } } }
+2018-04-10 12:40:22.826902: I tensorflow/core/framework/log_memory.cc:35] __LOG_MEMORY__ MemoryLogTensorDeallocation { allocator_name: "cpu" }
+2018-04-10 12:40:22.826907: I tensorflow/core/common_runtime/executor.cc:1672] Synchronous kernel done: 2 step 1 Const = Const[dtype=DT_STRING, value=Tensor<type: string shape: [] values: Hello, TensorFlow!>, _device="/job:localhost/replica:0/task:0/device:CPU:0"]() is dead: 0
+2018-04-10 12:40:22.826912: I tensorflow/core/common_runtime/executor.cc:1560] Process node: 3 step 1 _retval_Const_0_0 = _Retval[T=DT_STRING, index=0, _device="/job:localhost/replica:0/task:0/device:CPU:0"](Const) is dead: 0
+2018-04-10 12:40:22.826920: I tensorflow/core/common_runtime/executor.cc:1672] Synchronous kernel done: 3 step 1 _retval_Const_0_0 = _Retval[T=DT_STRING, index=0, _device="/job:localhost/replica:0/task:0/device:CPU:0"](Const) is dead: 0
+2018-04-10 12:40:22.826924: I tensorflow/core/common_runtime/executor.cc:2384] Delete frame 
+2018-04-10 12:40:22.847735: I tensorflow/core/framework/log_memory.cc:35] __LOG_MEMORY__ MemoryLogTensorDeallocation { allocator_name: "cpu" }
+
+
+
+1.7.0
+[name: "/device:CPU:0"
+device_type: "CPU"
+memory_limit: 268435456
+locality {
+}
+incarnation: 14419842287542771323
+]
+Hello, TensorFlow!

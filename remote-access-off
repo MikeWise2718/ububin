@@ -1,0 +1,4 @@
+#!/bin/bash
+DISPLAY=:0 dconf write /org/gnome/desktop/remote-access/enabled false
+DISPLAY=:0 dconf write /org/gnome/desktop/remote-access/require-encription true
+

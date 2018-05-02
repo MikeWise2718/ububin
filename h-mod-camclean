@@ -1,0 +1,2 @@
+#!/bin/bash
+rm -f /mass/vafsb/imcap/c*.jpg

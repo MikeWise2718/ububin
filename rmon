@@ -1,0 +1,5 @@
+#!/bin/bash
+DISPLAY=:0 dconf write /org/gnome/desktop/remote-access/enabled true
+DISPLAY=:0 dconf write /org/gnome/desktop/remote-access/require-encryption false
+DISPLAY=:0 dconf write /org/gnome/desktop/remote-access/prompt-enabled false
+DISPLAY=:0 /usr/lib/vino/vino-server
