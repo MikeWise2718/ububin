@@ -1,0 +1,22 @@
+#!/bin/bash
+
+doit (){
+  ind=iframe
+  fname=20180316-080207-166.jpg
+  python3 va_main.py --input $ind --frame $ind/$fname --modelname $1 --output o_$1 --conflim 0.2 --boxplotlev 1 --redactlev 1 --numfcand 100
+}
+doit  frcnn-nas-low
+doit  ssd-mob1 
+doit  ssd-mob2 
+doit  ssd-inc2 
+doit  frcnn-incepv2  
+doit  frcnn-res50 
+doit  frcnn-res50-low  
+doit  rfcn-res101-2017 
+doit  rfcn-res101 
+doit  frcnn-res101 
+doit  frcnn-res101-low 
+doit  frcnn-res101-at 
+doit  frcnn-res101-low-at
+doit  frcnn-nas 
+doit  frcnn-nas-low  

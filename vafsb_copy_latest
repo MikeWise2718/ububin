@@ -1,0 +1,3 @@
+#!/bin/bash
+cd /mass/vafsb/imcap/output_redaction/boxplots
+azcopy --source $(ls -t bp_* | head -1) --destination https://vafsb.file.core.windows.net/pbiframes/bp_latest.jpg --dest-key lhwWB1tTeJ36r8Ir6ajPj6baaaL/Ysx9ljq/E0v3ZQ0SKIcGklsVmz7E8sulr9bpxQoQtbx4fz4Q2VhIexI1Tw== --verbose --quiet

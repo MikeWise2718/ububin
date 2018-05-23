@@ -1,0 +1,5 @@
+#!/bin/bash
+SDIR=/home/mike/tfrepos/models/research/object_detection/
+DDIR=/home/mike/vafsb/h-mod/h-objdet/vapy/
+find . -name "va_*.py" -exec diff -q {}  $DDIR{} \;
+
