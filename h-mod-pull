@@ -2,3 +2,4 @@
 az acr login --name vafsb
 docker pull vafsb.azurecr.io/h-camcap:latest-amd64
 docker pull vafsb.azurecr.io/h-objdet:latest-amd64
+docker pull vafsb.azurecr.io/h-frmtrn:latest-amd64
