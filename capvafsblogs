@@ -1,0 +1,7 @@
+#!/bin/bash
+mkdir ~/vafsblogs/$1
+docker logs edgeAgent >~/vafsblogs/$1/edgeAgent.log
+docker logs edgeHub >~/vafsblogs/$1/edgeHub.log
+docker logs h-camcap >~/vafsblogs/$1/h-camcap.log
+docker logs h-objdet >~/vafsblogs/$1/h-objdet.log
+docker logs h-frmtrn >~/vafsblogs/$1/h-frmtrn.log
