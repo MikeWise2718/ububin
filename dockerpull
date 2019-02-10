@@ -1,0 +1,4 @@
+#!/bin/bash
+docker pull vafsp.azurecr.io/camcap:latest-amd64
+docker pull vafsp.azurecr.io/objdet:latest-amd64
+docker pull vafsp.azurecr.io/frmtrn:latest-amd64
