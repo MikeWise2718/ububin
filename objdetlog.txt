@@ -1,0 +1,905 @@
+Starting objdet ver:0.64 - 2019-03-27 on 2019-03-27 17:55:32
+                verbosity:4
+                assemblyname:objdet, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+Finished init
+Waiting for cancellation
+IoT Hub module client initialized.
+reset nodename to:abra
+reset comment to:not daemonized
+reset verbosity to:4
+reset cleanuplevel to:0
+reset modelName to:rfcn-res101
+reset confLim to:0.2
+reset numCand to:40
+reset boxPlotLev to:1
+reset redactLev to:1
+reset daemonize to:0
+reset dirbind to:/mass/vafsb/imcap:/imCapVol
+reset ipctfserver to:1
+reset ipcprelaunchserver to:0
+reset ipcendpoint to:tcp://127.0.0.1:16181
+reset ipctimeout to:60000
+============ ScoringMessageHandler invoked 2019-03-27 17:55:44.497 verbosity:4 ================================
+Received message: 1, Body: [{"messagetype":"camMsg","nodename":"usaring","camlabel":"Ubiquity-UVC G3","camcomment":"EyeTwo on EB12 Block Parking","cammacaddr":"F0:9F:C2:C0:E7:B4","campose":"EyeTwo-01","capturetime":"2019-03-27T17:55:40.39364+00:00","capturenumtime":17055040,"basefname":"EyeTwo-01--cc20190327-175540-393.jpg","pathfname":"/imCapVol/newImages/EyeTwo-01--cc20190327-175540-393.jpg","framebytes":752601,"camcaptimespan":31.352400000000003,"camlooptimespan":60000.0,"camproctimespan":31.352400000000003,"modulename":"camcap","moduleuptime":6.2151432999999994,"moduleuptimehr":0.0017264286944444443,"modulecycles":1,"modulefaults":0,"moduleworkingset":63209472.0,"modulecpusecs":0.7}]
+Need to ml process:EyeTwo-01--cc20190327-175540-393.jpg - full path:/imCapVol/newImages/EyeTwo-01--cc20190327-175540-393.jpg - capture time:03/27/2019 17:55:40
+Image Directory /imCapVol/newImages has 0 images in it
+RunScoring - working set 66158592 bytes
+             total cpu time 1.15 sec
+LaunchSingleShotPython Parameter String: --nodename abra  --verbosity 4 --modelname rfcn-res101 --input /imCapVol/newImages --frame /imCapVol/newImages/EyeTwo-01--cc20190327-175540-393.jpg --output /imCapVol/output_redaction --conflim 0.2 --numfcand 40 --boxplotlev 1 --redactlev 1 
+Python invoker invoked
+   Cmd :/tensorflow/models/research/object_detection/va2_main.py
+   Args:--nodename abra  --verbosity 4 --modelname rfcn-res101 --input /imCapVol/newImages --frame /imCapVol/newImages/EyeTwo-01--cc20190327-175540-393.jpg --output /imCapVol/output_redaction --conflim 0.2 --numfcand 40 --boxplotlev 1 --redactlev 1 
+--- Process started - verbosity:4 - waiting for output ---
+Errors and or Warnings in Python scoring script - stderr:
+Traceback (most recent call last):
+  File "/tensorflow/models/research/object_detection/va2_main.py", line 155, in <module>
+    detector.setinputoutput(args.input_dir,args.frame_filename,args.output_dir,loadimages=True)
+  File "/tensorflow/models/research/object_detection/va2_detector.py", line 181, in setinputoutput
+    msg = msg + "\n" + self.load_images()
+  File "/tensorflow/models/research/object_detection/va2_detector.py", line 294, in load_images
+    'Error in detector.load_images: the directory "{}" is empty'.format(self.input_dir))
+ImportError: Error in detector.load_images: the directory "/imCapVol/newImages" is empty
+
+Output of Python scoring script -  stdout:
+Traceback (most recent call last):
+  File "/tensorflow/models/research/object_detection/va2_main.py", line 155, in <module>
+    detector.setinputoutput(args.input_dir,args.frame_filename,args.output_dir,loadimages=True)
+  File "/tensorflow/models/research/object_detection/va2_detector.py", line 181, in setinputoutput
+    msg = msg + "\n" + self.load_images()
+  File "/tensorflow/models/research/object_detection/va2_detector.py", line 294, in load_images
+    'Error in detector.load_images: the directory "{}" is empty'.format(self.input_dir))
+ImportError: Error in detector.load_images: the directory "/imCapVol/newImages" is empty
+
+[0;97mStarting va2_main.py - ver: 0.2  date: 2018-05-23
+[32m  TensorFlow version 1.12.0
+[32m  OpenCV version 4.0.0
+[0mva2_main arguments and settings:
+[0m   nodename:abra daemonize:0 modelname:rfcn-res101 verbosity:4
+[0m   input_dir:/imCapVol/newImages frame_filename:/imCapVol/newImages/EyeTwo-01--cc20190327-175540-393.jpg output_dir:/imCapVol/output_redaction  dirmap:
+[0m   conflim:0.2 numfcand:40 maxobjnum:0 numinfer:1
+[0m   redactleve:1 boxplotlev:1 delframe:False
+[0m[33mdetector.setinputoutput input_dir:/imCapVol/newImages  frame_filename:/imCapVol/newImages/EyeTwo-01--cc20190327-175540-393.jpg
+[0m         output_dir:/imCapVol/output_redaction  loadimages:True verbosity:-1[37m
+[0m[33mdetector.load_images[37m
+--- End of process output ---
+RunScoring took 2389.2541 ms or 2.3892541 secs - outputlines:12
+datetime now:2019-03-27 17:55:44.497
+Sending 970 bytes to output1
+SendTelemetry sending 970 bytes to output1 as msgTyp:sumMsg
+ objdet sending json objdetMessageFrame: {"messagetype":"sumMsg","objsumguid":"25cd832c-d5cd-4704-805a-3f42b6218ea5","capturetime":"2019-03-27T17:55:40.39364+00:00","nodename":"abra","comment":"not daemonized","camlabel":"Ubiquity-UVC G3","camcomment":"EyeTwo on EB12 Block Parking","campose":"EyeTwo-01","basefname":"EyeTwo-01--cc20190327-175540-393.jpg","pathfname":"/imCapVol/newImages/EyeTwo-01--cc20190327-175540-393.jpg","framebytes":752601,"objdettime":"2019-03-27T17:55:44.497902+00:00","objdetnumtime":17055044,"objdetstrtime":"2019-03-27 17:55:44.497","pyprocesselap":2.3892541,"statussummary":"abra found 0 relevant objects at 03/27/2019 17:55:44","randomint":85,"numimages":0,"personcount":0,"carvehiclecount":0,"carcount":0,"truckcount":0,"buscount":0,"traincount":0,"birdcount":0,"totalcount":0,"pyfreemem":0.0,"pyfreememk":0,"modulename":"objdet","moduleuptime":14.1241484,"moduleuptimehr":0.003923374555555555,"modulecycles":1,"modulefaults":0,"moduleworkingset":66240512.0,"modulecpusecs":1.16} to output1
+Sending 593 bytes to output3
+SendTelemetry sending 593 bytes to output3 as msgTyp:frameTranMsg
+ objdet sending json objdetMessageFrame: {"messagetype":"frameTran","objsumguid":"25cd832c-d5cd-4704-805a-3f42b6218ea5","capturetime":"2019-03-27T17:55:40.39364+00:00","nodename":"abra","comment":"not daemonized","camlabel":"Ubiquity-UVC G3","camcomment":"EyeTwo on EB12 Block Parking","campose":"EyeTwo-01","basefname":"EyeTwo-01--cc20190327-175540-393.jpg","pathfname":"/imCapVol/newImages/EyeTwo-01--cc20190327-175540-393.jpg","bppathfname":"","rdpathfname":"","crppathfname":"","objdettime":"2019-03-27T17:55:44.497902+00:00","objdetnumtime":17055044,"objdetstrtime":"2019-03-27 17:55:44.497","newimagesdir":"/imCapVol/newImages"} to output3
+fileCleanup cleanplev:0 dirname:/imCapVol/newImages
+============ ScoringMessageHandler invoked 2019-03-27 17:55:46.940 verbosity:4 ================================
+Received message: 2, Body: [{"messagetype":"camMsg","nodename":"usaring","camlabel":"Ubiquity-UVC G3","camcomment":"EyeTwo on EB12 Block Parking","cammacaddr":"F0:9F:C2:C0:E7:B4","campose":"EyeTwo-01","capturetime":"2019-03-27T17:55:40.4060814+00:00","capturenumtime":17055040,"basefname":"cc20190327T175540_406.jpg","pathfname":"/imCapVol/newImages/cc20190327T175540_406.jpg","framebytes":752601,"camcaptimespan":20.667,"camlooptimespan":60000.0,"camproctimespan":20.667,"modulename":"camcap","moduleuptime":5.4610677999999995,"moduleuptimehr":0.0015169632777777776,"modulecycles":1,"modulefaults":0,"moduleworkingset":58114048.0,"modulecpusecs":0.5}]
+Need to ml process:cc20190327T175540_406.jpg - full path:/imCapVol/newImages/cc20190327T175540_406.jpg - capture time:03/27/2019 17:55:40
+Image Directory /imCapVol/newImages has 0 images in it
+RunScoring - working set 66605056 bytes
+             total cpu time 1.22 sec
+LaunchSingleShotPython Parameter String: --nodename abra  --verbosity 4 --modelname rfcn-res101 --input /imCapVol/newImages --frame /imCapVol/newImages/cc20190327T175540_406.jpg --output /imCapVol/output_redaction --conflim 0.2 --numfcand 40 --boxplotlev 1 --redactlev 1 
+Python invoker invoked
+   Cmd :/tensorflow/models/research/object_detection/va2_main.py
+   Args:--nodename abra  --verbosity 4 --modelname rfcn-res101 --input /imCapVol/newImages --frame /imCapVol/newImages/cc20190327T175540_406.jpg --output /imCapVol/output_redaction --conflim 0.2 --numfcand 40 --boxplotlev 1 --redactlev 1 
+--- Process started - verbosity:4 - waiting for output ---
+Errors and or Warnings in Python scoring script - stderr:
+Traceback (most recent call last):
+  File "/tensorflow/models/research/object_detection/va2_main.py", line 155, in <module>
+    detector.setinputoutput(args.input_dir,args.frame_filename,args.output_dir,loadimages=True)
+  File "/tensorflow/models/research/object_detection/va2_detector.py", line 181, in setinputoutput
+    msg = msg + "\n" + self.load_images()
+  File "/tensorflow/models/research/object_detection/va2_detector.py", line 294, in load_images
+    'Error in detector.load_images: the directory "{}" is empty'.format(self.input_dir))
+ImportError: Error in detector.load_images: the directory "/imCapVol/newImages" is empty
+
+Output of Python scoring script -  stdout:
+Traceback (most recent call last):
+  File "/tensorflow/models/research/object_detection/va2_main.py", line 155, in <module>
+    detector.setinputoutput(args.input_dir,args.frame_filename,args.output_dir,loadimages=True)
+  File "/tensorflow/models/research/object_detection/va2_detector.py", line 181, in setinputoutput
+    msg = msg + "\n" + self.load_images()
+  File "/tensorflow/models/research/object_detection/va2_detector.py", line 294, in load_images
+    'Error in detector.load_images: the directory "{}" is empty'.format(self.input_dir))
+ImportError: Error in detector.load_images: the directory "/imCapVol/newImages" is empty
+
+[0;97mStarting va2_main.py - ver: 0.2  date: 2018-05-23
+[32m  TensorFlow version 1.12.0
+[32m  OpenCV version 4.0.0
+[0mva2_main arguments and settings:
+[0m   nodename:abra daemonize:0 modelname:rfcn-res101 verbosity:4
+[0m   input_dir:/imCapVol/newImages frame_filename:/imCapVol/newImages/cc20190327T175540_406.jpg output_dir:/imCapVol/output_redaction  dirmap:
+[0m   conflim:0.2 numfcand:40 maxobjnum:0 numinfer:1
+[0m   redactleve:1 boxplotlev:1 delframe:False
+[0m[33mdetector.setinputoutput input_dir:/imCapVol/newImages  frame_filename:/imCapVol/newImages/cc20190327T175540_406.jpg
+[0m         output_dir:/imCapVol/output_redaction  loadimages:True verbosity:-1[37m
+[0m[33mdetector.load_images[37m
+--- End of process output ---
+RunScoring took 1038.885 ms or 1.038885 secs - outputlines:12
+datetime now:2019-03-27 17:55:46.940
+Sending 949 bytes to output1
+SendTelemetry sending 949 bytes to output1 as msgTyp:sumMsg
+ objdet sending json objdetMessageFrame: {"messagetype":"sumMsg","objsumguid":"35bb747c-36ef-46d6-98bd-8004cfe4aa66","capturetime":"2019-03-27T17:55:40.4060814+00:00","nodename":"abra","comment":"not daemonized","camlabel":"Ubiquity-UVC G3","camcomment":"EyeTwo on EB12 Block Parking","campose":"EyeTwo-01","basefname":"cc20190327T175540_406.jpg","pathfname":"/imCapVol/newImages/cc20190327T175540_406.jpg","framebytes":752601,"objdettime":"2019-03-27T17:55:46.940892+00:00","objdetnumtime":17055046,"objdetstrtime":"2019-03-27 17:55:46.940","pyprocesselap":1.038885,"statussummary":"abra found 0 relevant objects at 03/27/2019 17:55:46","randomint":35,"numimages":0,"personcount":0,"carvehiclecount":0,"carcount":0,"truckcount":0,"buscount":0,"traincount":0,"birdcount":0,"totalcount":0,"pyfreemem":0.0,"pyfreememk":0,"modulename":"objdet","moduleuptime":15.215582,"moduleuptimehr":0.0042265505555555555,"modulecycles":2,"modulefaults":0,"moduleworkingset":66613248.0,"modulecpusecs":1.22} to output1
+Sending 573 bytes to output3
+SendTelemetry sending 573 bytes to output3 as msgTyp:frameTranMsg
+ objdet sending json objdetMessageFrame: {"messagetype":"frameTran","objsumguid":"35bb747c-36ef-46d6-98bd-8004cfe4aa66","capturetime":"2019-03-27T17:55:40.4060814+00:00","nodename":"abra","comment":"not daemonized","camlabel":"Ubiquity-UVC G3","camcomment":"EyeTwo on EB12 Block Parking","campose":"EyeTwo-01","basefname":"cc20190327T175540_406.jpg","pathfname":"/imCapVol/newImages/cc20190327T175540_406.jpg","bppathfname":"","rdpathfname":"","crppathfname":"","objdettime":"2019-03-27T17:55:46.940892+00:00","objdetnumtime":17055046,"objdetstrtime":"2019-03-27 17:55:46.940","newimagesdir":"/imCapVol/newImages"} to output3
+fileCleanup cleanplev:0 dirname:/imCapVol/newImages
+============ ScoringMessageHandler invoked 2019-03-27 17:56:41.332 verbosity:4 ================================
+Received message: 3, Body: [{"messagetype":"camMsg","nodename":"abra","camlabel":"Reolink-RLC-411WS","camcomment":"Eye on EB12 Block Parking - test - 7","cammacaddr":"F0:9F:C2:C0:E7:B4","campose":"EyeOne01","capturetime":"2019-03-27T17:56:41.3211758+00:00","capturenumtime":17056041,"basefname":"EyeOne01--cc20190327-175641-321.jpg","pathfname":"/imCapVol/newImages/EyeOne01--cc20190327-175641-321.jpg","framebytes":753083,"camcaptimespan":5.0280000000000005,"camlooptimespan":61209.6952,"camproctimespan":5.0280000000000005,"modulename":"camcap","moduleuptime":67.115172399999992,"moduleuptimehr":0.018643103444444441,"modulecycles":2,"modulefaults":0,"moduleworkingset":66494464.0,"modulecpusecs":0.94}]
+Need to ml process:EyeOne01--cc20190327-175641-321.jpg - full path:/imCapVol/newImages/EyeOne01--cc20190327-175641-321.jpg - capture time:03/27/2019 17:56:41
+Image Directory /imCapVol/newImages has 1 images in it
+RunScoring - working set 66715648 bytes
+             total cpu time 1.24 sec
+LaunchSingleShotPython Parameter String: --nodename abra  --verbosity 4 --modelname rfcn-res101 --input /imCapVol/newImages --frame /imCapVol/newImages/EyeOne01--cc20190327-175641-321.jpg --output /imCapVol/output_redaction --conflim 0.2 --numfcand 40 --boxplotlev 1 --redactlev 1 
+Python invoker invoked
+   Cmd :/tensorflow/models/research/object_detection/va2_main.py
+   Args:--nodename abra  --verbosity 4 --modelname rfcn-res101 --input /imCapVol/newImages --frame /imCapVol/newImages/EyeOne01--cc20190327-175641-321.jpg --output /imCapVol/output_redaction --conflim 0.2 --numfcand 40 --boxplotlev 1 --redactlev 1 
+--- Process started - verbosity:4 - waiting for output ---
+Errors and or Warnings in Python scoring script - stderr:
+2019-03-27 17:56:44.171448: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+
+Output of Python scoring script -  stdout:
+2019-03-27 17:56:44.171448: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+
+[0;97mStarting va2_main.py - ver: 0.2  date: 2018-05-23
+[32m  TensorFlow version 1.12.0
+[32m  OpenCV version 4.0.0
+[0mva2_main arguments and settings:
+[0m   nodename:abra daemonize:0 modelname:rfcn-res101 verbosity:4
+[0m   input_dir:/imCapVol/newImages frame_filename:/imCapVol/newImages/EyeOne01--cc20190327-175641-321.jpg output_dir:/imCapVol/output_redaction  dirmap:
+[0m   conflim:0.2 numfcand:40 maxobjnum:0 numinfer:1
+[0m   redactleve:1 boxplotlev:1 delframe:False
+[0m[33mdetector.setinputoutput input_dir:/imCapVol/newImages  frame_filename:/imCapVol/newImages/EyeOne01--cc20190327-175641-321.jpg
+[0m         output_dir:/imCapVol/output_redaction  loadimages:True verbosity:-1[37m
+[0m[33mdetector.load_images[37m
+[0mfilelist:['/imCapVol/newImages/EyeOne01--cc20190327-175641-321.jpg']
+[0m  ==== image file names ===
+[0m/imCapVol/newImages/cc20190327T175641_921.jpg
+[0mReading frames...
+[0mSCALE_RATIO ok - not <1
+[0mimage_names:
+[0mEyeOne01--cc20190327-175641-321.jpg
+self.images at load time jagged:False
+<class 'numpy.ndarray'>
+(1, 1080, 1920, 3)
+self.images[0] at load time
+<class 'numpy.ndarray'>
+(1080, 1920, 3)
+[0m[35mload_images step took:     0.038 secs[37m
+[0m[33mStarting detector.init_tf modelname:rfcn-res101  forceload:False
+[0m         self.modelname_key:m1  lastmodelloaded:[37m
+rfcn_resnet101_coco_2018_01_28Using model: 
+[0mname: "/device:CPU:0"
+device_type: "CPU"
+memory_limit: 268435456
+locality {
+}
+incarnation: 9793194180402279924
+
+name: "/device:XLA_CPU:0"
+device_type: "XLA_CPU"
+memory_limit: 17179869184
+locality {
+}
+incarnation: 2661035847017152182
+physical_device_desc: "device: XLA_CPU device"
+
+[0mdetector.init_tf loaded model rfcn_resnet101_coco_2018_01_28 in:     1.920 secs
+[0m[33mdetector.detect
+[0m   input_dir:/imCapVol/newImages frame_filename:/imCapVol/newImages/EyeOne01--cc20190327-175641-321.jpg output_dir:/imCapVol/output_redaction verbosity:4
+[0m   boxplotlev:0 conflim:0.2 hitlist:vafsb_detected.csv numfcand:40 modelname:rfcn-res101
+[0m   pooldir: maxobjnum:0 numinfer:1[37m
+[0mjagged:False istep:50
+[0mtf now inferring away 0 of 1...
+[0m[35minference step took:     4.941 secs[37m
+[0m====   boxes    ====
+[0m<class 'numpy.ndarray'>
+[0m(1, 100, 4)
+[0m[[[0.57660204 0.77410746 0.6921014  0.8622608 ]
+  [0.57051086 0.689358   0.6825973  0.7832521 ]
+  [0.5668118  0.73895365 0.6860962  0.8727376 ]
+  [0.48952428 0.57467425 0.56258154 0.61609995]
+  [0.44485724 0.28096306 0.5440158  0.3374141 ]
+  [0.52747256 0.7678411  0.57446676 0.8098395 ]
+  [0.52289027 0.76416427 0.58339655 0.81042475]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]]]
+[0m====   scores   ====
+[0m<class 'numpy.ndarray'>
+[0m(1, 100)
+[0m[[0.94970536 0.6780438  0.58707726 0.5090254  0.49793375 0.35269713
+  0.31464082 0.         0.         0.         0.         0.
+  0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.        ]]
+[0m====   classes  ====
+[0m<class 'numpy.ndarray'>
+[0m(1, 100)
+[0m[[3. 3. 3. 3. 6. 3. 8. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+  1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]]
+[0m====   num      ====
+[0m<class 'numpy.ndarray'>
+[0m(1,)
+[0m[7.]
+[0m====================
+[0mDetect-found:0 conflim:0.2 class:person file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:bicycle file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0m[33mDetect-found:5 conflim:0.2 class:car file:EyeOne01--cc20190327-175641-321.jpg scores:[0.94970536 0.67804378 0.58707726 0.50902539 0.35269713][37m
+[0mDetect-found:0 conflim:0.2 class:motorcycle file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:airplane file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0m[33mDetect-found:1 conflim:0.2 class:bus file:EyeOne01--cc20190327-175641-321.jpg scores:[0.49793375][37m
+[0mDetect-found:0 conflim:0.2 class:train file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0m[33mDetect-found:1 conflim:0.2 class:truck file:EyeOne01--cc20190327-175641-321.jpg scores:[0.31464082][37m
+[0mDetect-found:0 conflim:0.2 class:boat file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:traffic light file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:fire hydrant file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:stop sign file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:parking meter file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:bench file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:bird file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:cat file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:dog file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:horse file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:sheep file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:cow file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:elephant file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:bear file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:zebra file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:giraffe file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:backpack file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:umbrella file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:handbag file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:tie file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:suitcase file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:frisbee file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:skis file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:snowboard file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:sports ball file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:kite file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:baseball bat file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:baseball glove file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:skateboard file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:surfboard file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:tennis racket file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:bottle file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:wine glass file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:cup file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:fork file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:knife file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:spoon file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:bowl file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:banana file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:apple file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:sandwich file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:orange file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:broccoli file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:carrot file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:hot dog file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:pizza file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:donut file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:cake file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:chair file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:couch file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:potted plant file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:bed file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:dining table file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:toilet file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:tv file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:laptop file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:mouse file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:remote file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:keyboard file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:cell phone file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:microwave file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:oven file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:toaster file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:sink file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:refrigerator file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:book file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:clock file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:vase file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:scissors file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:teddy bear file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:hair drier file:EyeOne01--cc20190327-175641-321.jpg scores:[]
+[0mobjects-detected:7 classes-detected:3
+[0mhit-obj:EyeOne01--cc20190327-175641-321.jpg,car,0.9497,0.5766,0.7741,0.6921,0.8623
+[0mhit-obj:EyeOne01--cc20190327-175641-321.jpg,car,0.678,0.5705,0.6894,0.6826,0.7833
+[0mhit-obj:EyeOne01--cc20190327-175641-321.jpg,car,0.5871,0.5668,0.739,0.6861,0.8727
+[0mhit-obj:EyeOne01--cc20190327-175641-321.jpg,car,0.509,0.4895,0.5747,0.5626,0.6161
+[0mhit-obj:EyeOne01--cc20190327-175641-321.jpg,car,0.3527,0.5275,0.7678,0.5745,0.8098
+[0mhit-obj:EyeOne01--cc20190327-175641-321.jpg,bus,0.4979,0.4449,0.281,0.544,0.3374
+[0mhit-obj:EyeOne01--cc20190327-175641-321.jpg,truck,0.3146,0.5229,0.7642,0.5834,0.8104
+[0mdetect_objects done - Hitlist stored in vafsb_detected.csv
+[0m[35mdetect total took:     4.945 secs[37m
+[0m[33mdetector.redact_objects
+[0m     input_dir:/imCapVol/newImages output_dir:/imCapVol/output_redaction redact_percentage:0.25
+[0m     boxplotlev:0 hitlist:vafsb_detected.csv pooldir: verbosity:4[37m
+[0mredact_objects reading image file:/imCapVol/newImages/EyeOne01--cc20190327-175641-321.jpg
+[0mcropping class:car score:0.9497
+[0mcropping class:car score:0.6779999999999999
+[0mcropping class:car score:0.5871
+[0mcropping class:car score:0.509
+[0mcropping class:car score:0.3527
+[0mcropping class:bus score:0.4979
+[0mcropping class:truck score:0.3146
+[0m
+redacted-image:/imCapVol/output_redaction/redacted_EyeOne01--cc20190327-175641-321.jpg
+[0mredact_objects done. Metadata is saved to /imCapVol/output_redaction/metadata.json. Overlays: /imCapVol/output_redaction/cropped. Redacted images: /imCapVol/output_redaction/redacted
+[0m[35m
+cropped-image:/imCapVol/output_redaction/cropped/cropped_EyeOne01--cc20190327-175641-321_0.jpg
+cropped-image:/imCapVol/output_redaction/cropped/cropped_EyeOne01--cc20190327-175641-321_1.jpg
+cropped-image:/imCapVol/output_redaction/cropped/cropped_EyeOne01--cc20190327-175641-321_2.jpg
+cropped-image:/imCapVol/output_redaction/cropped/cropped_EyeOne01--cc20190327-175641-321_3.jpg
+cropped-image:/imCapVol/output_redaction/cropped/cropped_EyeOne01--cc20190327-175641-321_4.jpg
+cropped-image:/imCapVol/output_redaction/cropped/cropped_EyeOne01--cc20190327-175641-321_5.jpg
+cropped-image:/imCapVol/output_redaction/cropped/cropped_EyeOne01--cc20190327-175641-321_6.jpg
+redacted-image:/imCapVol/output_redaction/redacted_EyeOne01--cc20190327-175641-321.jpg
+redact_objects total took:     0.174 secs[37m
+[0m[33mdetector.doboxplots
+[0m     input_dir:/imCapVol/newImages output_dir:/imCapVol/output_redaction
+[0m     boxplotlev:0 hitlist:vafsb_detected.csv pooldir: verbosity:4[37m
+[0m/imCapVol/output_redaction/boxplots/bp_EyeOne01--cc20190327-175641-321.jpg
+[0mfile:EyeOne01--cc20190327-175641-321.jpg xpix:1920  ypix:1080 mode:RGB
+[0mboxplot-image:/imCapVol/output_redaction/boxplots/bp_EyeOne01--cc20190327-175641-321.jpg
+[0mBoxplots saved in /imCapVol/output_redaction/boxplots/
+[0m[35mboxplot-image:/imCapVol/output_redaction/boxplots/bp_EyeOne01--cc20190327-175641-321.jpg
+doboxplots total took:     1.414 secs[37m
+[0m[33mdetector.doboxplots
+[0m     input_dir:/imCapVol/newImages output_dir:/imCapVol/output_redaction
+[0m     boxplotlev:0 hitlist:vafsb_detected.csv pooldir: verbosity:4[37m
+[0m/imCapVol/output_redaction/boxplots/rbp_EyeOne01--cc20190327-175641-321.jpg
+[0mfile:EyeOne01--cc20190327-175641-321.jpg xpix:1920  ypix:1080 mode:RGB
+[0mboxplot-image:/imCapVol/output_redaction/boxplots/rbp_EyeOne01--cc20190327-175641-321.jpg
+[0mBoxplots saved in /imCapVol/output_redaction/boxplots/
+[0m[35mboxplot-image:/imCapVol/output_redaction/boxplots/rbp_EyeOne01--cc20190327-175641-321.jpg
+doboxplots total took:     1.374 secs[37m
+[0mfree-mem:11869.3 total-mem:16681.1 in:MB
+[0mva_main total took:     9.894 secs
+--- End of process output ---
+RunScoring took 11076.81 ms or 11.07681 secs - outputlines:248
+datetime now:2019-03-27 17:56:41.332
+line:[0mDetect-found:0 conflim:0.2 class:person file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:person
+line:[0mDetect-found:0 conflim:0.2 class:bicycle file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:bicycle
+line:[0m[33mDetect-found:5 conflim:0.2 class:car file:EyeOne01--cc20190327-175641-321.jpg scores:[0.94970536 0.67804378 0.58707726 0.50902539 0.35269713][37m n:5 c:0.2 o:car
+line:[0mDetect-found:0 conflim:0.2 class:motorcycle file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:motorcycle
+line:[0mDetect-found:0 conflim:0.2 class:airplane file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:airplane
+line:[0m[33mDetect-found:1 conflim:0.2 class:bus file:EyeOne01--cc20190327-175641-321.jpg scores:[0.49793375][37m n:1 c:0.2 o:bus
+line:[0mDetect-found:0 conflim:0.2 class:train file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:train
+line:[0m[33mDetect-found:1 conflim:0.2 class:truck file:EyeOne01--cc20190327-175641-321.jpg scores:[0.31464082][37m n:1 c:0.2 o:truck
+line:[0mDetect-found:0 conflim:0.2 class:boat file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:boat
+line:[0mDetect-found:0 conflim:0.2 class:traffic light file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:traffic
+line:[0mDetect-found:0 conflim:0.2 class:fire hydrant file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:fire
+line:[0mDetect-found:0 conflim:0.2 class:stop sign file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:stop
+line:[0mDetect-found:0 conflim:0.2 class:parking meter file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:parking
+line:[0mDetect-found:0 conflim:0.2 class:bench file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:bench
+line:[0mDetect-found:0 conflim:0.2 class:bird file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:bird
+line:[0mDetect-found:0 conflim:0.2 class:cat file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:cat
+line:[0mDetect-found:0 conflim:0.2 class:dog file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:dog
+line:[0mDetect-found:0 conflim:0.2 class:horse file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:horse
+line:[0mDetect-found:0 conflim:0.2 class:sheep file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:sheep
+line:[0mDetect-found:0 conflim:0.2 class:cow file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:cow
+line:[0mDetect-found:0 conflim:0.2 class:elephant file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:elephant
+line:[0mDetect-found:0 conflim:0.2 class:bear file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:bear
+line:[0mDetect-found:0 conflim:0.2 class:zebra file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:zebra
+line:[0mDetect-found:0 conflim:0.2 class:giraffe file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:giraffe
+line:[0mDetect-found:0 conflim:0.2 class:backpack file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:backpack
+line:[0mDetect-found:0 conflim:0.2 class:umbrella file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:umbrella
+line:[0mDetect-found:0 conflim:0.2 class:handbag file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:handbag
+line:[0mDetect-found:0 conflim:0.2 class:tie file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:tie
+line:[0mDetect-found:0 conflim:0.2 class:suitcase file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:suitcase
+line:[0mDetect-found:0 conflim:0.2 class:frisbee file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:frisbee
+line:[0mDetect-found:0 conflim:0.2 class:skis file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:skis
+line:[0mDetect-found:0 conflim:0.2 class:snowboard file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:snowboard
+line:[0mDetect-found:0 conflim:0.2 class:sports ball file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:sports
+line:[0mDetect-found:0 conflim:0.2 class:kite file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:kite
+line:[0mDetect-found:0 conflim:0.2 class:baseball bat file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:baseball
+line:[0mDetect-found:0 conflim:0.2 class:baseball glove file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:baseball
+line:[0mDetect-found:0 conflim:0.2 class:skateboard file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:skateboard
+line:[0mDetect-found:0 conflim:0.2 class:surfboard file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:surfboard
+line:[0mDetect-found:0 conflim:0.2 class:tennis racket file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:tennis
+line:[0mDetect-found:0 conflim:0.2 class:bottle file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:bottle
+line:[0mDetect-found:0 conflim:0.2 class:wine glass file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:wine
+line:[0mDetect-found:0 conflim:0.2 class:cup file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:cup
+line:[0mDetect-found:0 conflim:0.2 class:fork file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:fork
+line:[0mDetect-found:0 conflim:0.2 class:knife file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:knife
+line:[0mDetect-found:0 conflim:0.2 class:spoon file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:spoon
+line:[0mDetect-found:0 conflim:0.2 class:bowl file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:bowl
+line:[0mDetect-found:0 conflim:0.2 class:banana file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:banana
+line:[0mDetect-found:0 conflim:0.2 class:apple file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:apple
+line:[0mDetect-found:0 conflim:0.2 class:sandwich file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:sandwich
+line:[0mDetect-found:0 conflim:0.2 class:orange file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:orange
+line:[0mDetect-found:0 conflim:0.2 class:broccoli file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:broccoli
+line:[0mDetect-found:0 conflim:0.2 class:carrot file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:carrot
+line:[0mDetect-found:0 conflim:0.2 class:hot dog file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:hot
+line:[0mDetect-found:0 conflim:0.2 class:pizza file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:pizza
+line:[0mDetect-found:0 conflim:0.2 class:donut file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:donut
+line:[0mDetect-found:0 conflim:0.2 class:cake file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:cake
+line:[0mDetect-found:0 conflim:0.2 class:chair file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:chair
+line:[0mDetect-found:0 conflim:0.2 class:couch file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:couch
+line:[0mDetect-found:0 conflim:0.2 class:potted plant file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:potted
+line:[0mDetect-found:0 conflim:0.2 class:bed file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:bed
+line:[0mDetect-found:0 conflim:0.2 class:dining table file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:dining
+line:[0mDetect-found:0 conflim:0.2 class:toilet file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:toilet
+line:[0mDetect-found:0 conflim:0.2 class:tv file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:tv
+line:[0mDetect-found:0 conflim:0.2 class:laptop file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:laptop
+line:[0mDetect-found:0 conflim:0.2 class:mouse file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:mouse
+line:[0mDetect-found:0 conflim:0.2 class:remote file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:remote
+line:[0mDetect-found:0 conflim:0.2 class:keyboard file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:keyboard
+line:[0mDetect-found:0 conflim:0.2 class:cell phone file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:cell
+line:[0mDetect-found:0 conflim:0.2 class:microwave file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:microwave
+line:[0mDetect-found:0 conflim:0.2 class:oven file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:oven
+line:[0mDetect-found:0 conflim:0.2 class:toaster file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:toaster
+line:[0mDetect-found:0 conflim:0.2 class:sink file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:sink
+line:[0mDetect-found:0 conflim:0.2 class:refrigerator file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:refrigerator
+line:[0mDetect-found:0 conflim:0.2 class:book file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:book
+line:[0mDetect-found:0 conflim:0.2 class:clock file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:clock
+line:[0mDetect-found:0 conflim:0.2 class:vase file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:vase
+line:[0mDetect-found:0 conflim:0.2 class:scissors file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:scissors
+line:[0mDetect-found:0 conflim:0.2 class:teddy bear file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:teddy
+line:[0mDetect-found:0 conflim:0.2 class:hair drier file:EyeOne01--cc20190327-175641-321.jpg scores:[] n:0 c:0.2 o:hair
+hitobj:[0mhit-obj:EyeOne01--cc20190327-175641-321.jpg,car,0.9497,0.5766,0.7741,0.6921,0.8623
+Sending 624 bytes to output2
+SendTelemetry sending 624 bytes to output2 as msgTyp:hitMsg
+ objdet sending json objdetMessageFrame: {"messagetype":"hitMsg","objdetguid":"4f660301-f8e5-4904-ba3f-d0a0fe015abb","objsumguid":"1d8af5d5-4d0a-4868-8554-473a44553631","basefname":"EyeOne01--cc20190327-175641-321.jpg","capturetime":"2019-03-27T17:56:41.3211758+00:00","nodename":"abra","campose":"EyeOne01","objdettime":"2019-03-27T17:56:52.4103814+00:00","objdetnumdettime":"0001-01-01T00:00:00","objdetstrtime":"2019-03-27 17:56:41.332","objdetnumtime":17056041,"cls":"car","objname":"car0","subcls":"","score":0.9497,"bbox_0":0.5766,"bbox_1":0.7741,"bbox_2":0.6921,"bbox_3":0.8623,"clr":"#4682b4","est_x":0.0,"est_y":0.0,"est_z":0.0,"est_azi":0.0,"est_ele":0.0} to output2
+hitobj:[0mhit-obj:EyeOne01--cc20190327-175641-321.jpg,car,0.678,0.5705,0.6894,0.6826,0.7833
+Sending 623 bytes to output2
+SendTelemetry sending 623 bytes to output2 as msgTyp:hitMsg
+ objdet sending json objdetMessageFrame: {"messagetype":"hitMsg","objdetguid":"256f9eed-249d-4952-8a7d-ecf2da66b43c","objsumguid":"1d8af5d5-4d0a-4868-8554-473a44553631","basefname":"EyeOne01--cc20190327-175641-321.jpg","capturetime":"2019-03-27T17:56:41.3211758+00:00","nodename":"abra","campose":"EyeOne01","objdettime":"2019-03-27T17:56:52.4164686+00:00","objdetnumdettime":"0001-01-01T00:00:00","objdetstrtime":"2019-03-27 17:56:41.332","objdetnumtime":17056041,"cls":"car","objname":"car1","subcls":"","score":0.678,"bbox_0":0.5705,"bbox_1":0.6894,"bbox_2":0.6826,"bbox_3":0.7833,"clr":"#4682b4","est_x":0.0,"est_y":0.0,"est_z":0.0,"est_azi":0.0,"est_ele":0.0} to output2
+hitobj:[0mhit-obj:EyeOne01--cc20190327-175641-321.jpg,car,0.5871,0.5668,0.739,0.6861,0.8727
+Sending 623 bytes to output2
+SendTelemetry sending 623 bytes to output2 as msgTyp:hitMsg
+ objdet sending json objdetMessageFrame: {"messagetype":"hitMsg","objdetguid":"d15a0a2b-8835-4ffe-978b-309eb86ba4e2","objsumguid":"1d8af5d5-4d0a-4868-8554-473a44553631","basefname":"EyeOne01--cc20190327-175641-321.jpg","capturetime":"2019-03-27T17:56:41.3211758+00:00","nodename":"abra","campose":"EyeOne01","objdettime":"2019-03-27T17:56:52.4171691+00:00","objdetnumdettime":"0001-01-01T00:00:00","objdetstrtime":"2019-03-27 17:56:41.332","objdetnumtime":17056041,"cls":"car","objname":"car2","subcls":"","score":0.5871,"bbox_0":0.5668,"bbox_1":0.739,"bbox_2":0.6861,"bbox_3":0.8727,"clr":"#4682b4","est_x":0.0,"est_y":0.0,"est_z":0.0,"est_azi":0.0,"est_ele":0.0} to output2
+hitobj:[0mhit-obj:EyeOne01--cc20190327-175641-321.jpg,car,0.509,0.4895,0.5747,0.5626,0.6161
+Sending 623 bytes to output2
+SendTelemetry sending 623 bytes to output2 as msgTyp:hitMsg
+ objdet sending json objdetMessageFrame: {"messagetype":"hitMsg","objdetguid":"7e90a9f2-3f52-46b9-be24-add5f0816ded","objsumguid":"1d8af5d5-4d0a-4868-8554-473a44553631","basefname":"EyeOne01--cc20190327-175641-321.jpg","capturetime":"2019-03-27T17:56:41.3211758+00:00","nodename":"abra","campose":"EyeOne01","objdettime":"2019-03-27T17:56:52.4176418+00:00","objdetnumdettime":"0001-01-01T00:00:00","objdetstrtime":"2019-03-27 17:56:41.332","objdetnumtime":17056041,"cls":"car","objname":"car3","subcls":"","score":0.509,"bbox_0":0.4895,"bbox_1":0.5747,"bbox_2":0.5626,"bbox_3":0.6161,"clr":"#4682b4","est_x":0.0,"est_y":0.0,"est_z":0.0,"est_azi":0.0,"est_ele":0.0} to output2
+hitobj:[0mhit-obj:EyeOne01--cc20190327-175641-321.jpg,car,0.3527,0.5275,0.7678,0.5745,0.8098
+Sending 624 bytes to output2
+SendTelemetry sending 624 bytes to output2 as msgTyp:hitMsg
+ objdet sending json objdetMessageFrame: {"messagetype":"hitMsg","objdetguid":"4a890d41-f6af-437c-9818-80c83c10abfd","objsumguid":"1d8af5d5-4d0a-4868-8554-473a44553631","basefname":"EyeOne01--cc20190327-175641-321.jpg","capturetime":"2019-03-27T17:56:41.3211758+00:00","nodename":"abra","campose":"EyeOne01","objdettime":"2019-03-27T17:56:52.4180987+00:00","objdetnumdettime":"0001-01-01T00:00:00","objdetstrtime":"2019-03-27 17:56:41.332","objdetnumtime":17056041,"cls":"car","objname":"car4","subcls":"","score":0.3527,"bbox_0":0.5275,"bbox_1":0.7678,"bbox_2":0.5745,"bbox_3":0.8098,"clr":"#4682b4","est_x":0.0,"est_y":0.0,"est_z":0.0,"est_azi":0.0,"est_ele":0.0} to output2
+hitobj:[0mhit-obj:EyeOne01--cc20190327-175641-321.jpg,bus,0.4979,0.4449,0.281,0.544,0.3374
+Sending 622 bytes to output2
+SendTelemetry sending 622 bytes to output2 as msgTyp:hitMsg
+ objdet sending json objdetMessageFrame: {"messagetype":"hitMsg","objdetguid":"c5453bc1-4dff-48c1-81f7-2050a0f8a95b","objsumguid":"1d8af5d5-4d0a-4868-8554-473a44553631","basefname":"EyeOne01--cc20190327-175641-321.jpg","capturetime":"2019-03-27T17:56:41.3211758+00:00","nodename":"abra","campose":"EyeOne01","objdettime":"2019-03-27T17:56:52.4186563+00:00","objdetnumdettime":"0001-01-01T00:00:00","objdetstrtime":"2019-03-27 17:56:41.332","objdetnumtime":17056041,"cls":"bus","objname":"bus5","subcls":"","score":0.4979,"bbox_0":0.4449,"bbox_1":0.281,"bbox_2":0.544,"bbox_3":0.3374,"clr":"#800000","est_x":0.0,"est_y":0.0,"est_z":0.0,"est_azi":0.0,"est_ele":0.0} to output2
+hitobj:[0mhit-obj:EyeOne01--cc20190327-175641-321.jpg,truck,0.3146,0.5229,0.7642,0.5834,0.8104
+Sending 628 bytes to output2
+SendTelemetry sending 628 bytes to output2 as msgTyp:hitMsg
+ objdet sending json objdetMessageFrame: {"messagetype":"hitMsg","objdetguid":"a67ed62a-420d-47c2-a6e3-83c21538fa55","objsumguid":"1d8af5d5-4d0a-4868-8554-473a44553631","basefname":"EyeOne01--cc20190327-175641-321.jpg","capturetime":"2019-03-27T17:56:41.3211758+00:00","nodename":"abra","campose":"EyeOne01","objdettime":"2019-03-27T17:56:52.4192117+00:00","objdetnumdettime":"0001-01-01T00:00:00","objdetstrtime":"2019-03-27 17:56:41.332","objdetnumtime":17056041,"cls":"truck","objname":"truck6","subcls":"","score":0.3146,"bbox_0":0.5229,"bbox_1":0.7642,"bbox_2":0.5834,"bbox_3":0.8104,"clr":"#32127A","est_x":0.0,"est_y":0.0,"est_z":0.0,"est_azi":0.0,"est_ele":0.0} to output2
+Found redacted-image filepath:/imCapVol/output_redaction/redacted_EyeOne01--cc20190327-175641-321.jpg
+Found cropped-image filepath:/imCapVol/output_redaction/cropped/cropped_EyeOne01--cc20190327-175641-321_0.jpg
+Found cropped-image filepath:/imCapVol/output_redaction/cropped/cropped_EyeOne01--cc20190327-175641-321_1.jpg
+Found cropped-image filepath:/imCapVol/output_redaction/cropped/cropped_EyeOne01--cc20190327-175641-321_2.jpg
+Found cropped-image filepath:/imCapVol/output_redaction/cropped/cropped_EyeOne01--cc20190327-175641-321_3.jpg
+Found cropped-image filepath:/imCapVol/output_redaction/cropped/cropped_EyeOne01--cc20190327-175641-321_4.jpg
+Found cropped-image filepath:/imCapVol/output_redaction/cropped/cropped_EyeOne01--cc20190327-175641-321_5.jpg
+Found cropped-image filepath:/imCapVol/output_redaction/cropped/cropped_EyeOne01--cc20190327-175641-321_6.jpg
+Found redacted-image filepath:/imCapVol/output_redaction/redacted_EyeOne01--cc20190327-175641-321.jpg
+Found boxplot-image filepath:/imCapVol/output_redaction/boxplots/bp_EyeOne01--cc20190327-175641-321.jpg
+Found boxplot-image filepath:/imCapVol/output_redaction/boxplots/bp_EyeOne01--cc20190327-175641-321.jpg
+Found boxplot-image filepath:/imCapVol/output_redaction/boxplots/rbp_EyeOne01--cc20190327-175641-321.jpg
+Found boxplot-image filepath:/imCapVol/output_redaction/boxplots/rbp_EyeOne01--cc20190327-175641-321.jpg
+Found pyfreemem:11869.3 pytotalmem:16681.1
+Sending 984 bytes to output1
+SendTelemetry sending 984 bytes to output1 as msgTyp:sumMsg
+ objdet sending json objdetMessageFrame: {"messagetype":"sumMsg","objsumguid":"1d8af5d5-4d0a-4868-8554-473a44553631","capturetime":"2019-03-27T17:56:41.3211758+00:00","nodename":"abra","comment":"not daemonized","camlabel":"Reolink-RLC-411WS","camcomment":"Eye on EB12 Block Parking - test - 7","campose":"EyeOne01","basefname":"EyeOne01--cc20190327-175641-321.jpg","pathfname":"/imCapVol/newImages/EyeOne01--cc20190327-175641-321.jpg","framebytes":753083,"objdettime":"2019-03-27T17:56:41.3320568+00:00","objdetnumtime":17056041,"objdetstrtime":"2019-03-27 17:56:41.332","pyprocesselap":11.07681,"statussummary":"abra found 7 relevant objects at 03/27/2019 17:56:41","randomint":38,"numimages":1,"personcount":0,"carvehiclecount":7,"carcount":5,"truckcount":1,"buscount":1,"traincount":0,"birdcount":0,"totalcount":7,"pyfreemem":11869.3,"pyfreememk":11,"modulename":"objdet","moduleuptime":79.6560461,"moduleuptimehr":0.022126679472222223,"modulecycles":3,"modulefaults":0,"moduleworkingset":67125248.0,"modulecpusecs":1.26} to output1
+Sending 1316 bytes to output3
+SendTelemetry sending 1316 bytes to output3 as msgTyp:frameTranMsg
+ objdet sending json objdetMessageFrame: {"messagetype":"frameTran","objsumguid":"1d8af5d5-4d0a-4868-8554-473a44553631","capturetime":"2019-03-27T17:56:41.3211758+00:00","nodename":"abra","comment":"not daemonized","camlabel":"Reolink-RLC-411WS","camcomment":"Eye on EB12 Block Parking - test - 7","campose":"EyeOne01","basefname":"EyeOne01--cc20190327-175641-321.jpg","pathfname":"/imCapVol/newImages/EyeOne01--cc20190327-175641-321.jpg","bppathfname":"/imCapVol/output_redaction/boxplots/rbp_EyeOne01--cc20190327-175641-321.jpg","rdpathfname":"/imCapVol/output_redaction/redacted_EyeOne01--cc20190327-175641-321.jpg","crppathfname":"/imCapVol/output_redaction/cropped/cropped_EyeOne01--cc20190327-175641-321_0.jpg,/imCapVol/output_redaction/cropped/cropped_EyeOne01--cc20190327-175641-321_1.jpg,/imCapVol/output_redaction/cropped/cropped_EyeOne01--cc20190327-175641-321_2.jpg,/imCapVol/output_redaction/cropped/cropped_EyeOne01--cc20190327-175641-321_3.jpg,/imCapVol/output_redaction/cropped/cropped_EyeOne01--cc20190327-175641-321_4.jpg,/imCapVol/output_redaction/cropped/cropped_EyeOne01--cc20190327-175641-321_5.jpg,/imCapVol/output_redaction/cropped/cropped_EyeOne01--cc20190327-175641-321_6.jpg,","objdettime":"2019-03-27T17:56:41.3320568+00:00","objdetnumtime":17056041,"objdetstrtime":"2019-03-27 17:56:41.332","newimagesdir":"/imCapVol/newImages"} to output3
+fileCleanup cleanplev:0 dirname:/imCapVol/newImages
+============ ScoringMessageHandler invoked 2019-03-27 17:56:52.423 verbosity:4 ================================
+Received message: 4, Body: [{"messagetype":"camMsg","nodename":"abra","camlabel":"IQeye852","camcomment":"Redwest G garage - km47 camera","cammacaddr":"","campose":"km47","capturetime":"2019-03-27T17:56:41.9210247+00:00","capturenumtime":17056041,"basefname":"cc20190327T175641_921.jpg","pathfname":"/imCapVol/newImages/cc20190327T175641_921.jpg","framebytes":182763,"camcaptimespan":0.97110000000000007,"camlooptimespan":61808.4159,"camproctimespan":0.97110000000000007,"modulename":"camcap","moduleuptime":66.9562029,"moduleuptimehr":0.01859894525,"modulecycles":2,"modulefaults":0,"moduleworkingset":66740224.0,"modulecpusecs":1.03}]
+Need to ml process:cc20190327T175641_921.jpg - full path:/imCapVol/newImages/cc20190327T175641_921.jpg - capture time:03/27/2019 17:56:41
+Image Directory /imCapVol/newImages has 2 images in it
+RunScoring - working set 67125248 bytes
+             total cpu time 1.26 sec
+LaunchSingleShotPython Parameter String: --nodename abra  --verbosity 4 --modelname rfcn-res101 --input /imCapVol/newImages --frame /imCapVol/newImages/cc20190327T175641_921.jpg --output /imCapVol/output_redaction --conflim 0.2 --numfcand 40 --boxplotlev 1 --redactlev 1 
+Python invoker invoked
+   Cmd :/tensorflow/models/research/object_detection/va2_main.py
+   Args:--nodename abra  --verbosity 4 --modelname rfcn-res101 --input /imCapVol/newImages --frame /imCapVol/newImages/cc20190327T175641_921.jpg --output /imCapVol/output_redaction --conflim 0.2 --numfcand 40 --boxplotlev 1 --redactlev 1 
+--- Process started - verbosity:4 - waiting for output ---
+Errors and or Warnings in Python scoring script - stderr:
+2019-03-27 17:56:54.876048: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+Traceback (most recent call last):
+  File "/tensorflow/models/research/object_detection/va2_main.py", line 171, in <module>
+    detector.doboxplots(prefix="r")
+  File "/tensorflow/models/research/object_detection/va2_detector.py", line 603, in doboxplots
+    image = Image.open(self.filelist[i])
+  File "/usr/local/lib/python3.5/dist-packages/PIL/Image.py", line 2634, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/imCapVol/newImages/cc20190327T175641_921.jpg'
+
+Output of Python scoring script -  stdout:
+2019-03-27 17:56:54.876048: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+Traceback (most recent call last):
+  File "/tensorflow/models/research/object_detection/va2_main.py", line 171, in <module>
+    detector.doboxplots(prefix="r")
+  File "/tensorflow/models/research/object_detection/va2_detector.py", line 603, in doboxplots
+    image = Image.open(self.filelist[i])
+  File "/usr/local/lib/python3.5/dist-packages/PIL/Image.py", line 2634, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/imCapVol/newImages/cc20190327T175641_921.jpg'
+
+[0;97mStarting va2_main.py - ver: 0.2  date: 2018-05-23
+[32m  TensorFlow version 1.12.0
+[32m  OpenCV version 4.0.0
+[0mva2_main arguments and settings:
+[0m   nodename:abra daemonize:0 modelname:rfcn-res101 verbosity:4
+[0m   input_dir:/imCapVol/newImages frame_filename:/imCapVol/newImages/cc20190327T175641_921.jpg output_dir:/imCapVol/output_redaction  dirmap:
+[0m   conflim:0.2 numfcand:40 maxobjnum:0 numinfer:1
+[0m   redactleve:1 boxplotlev:1 delframe:False
+[0m[33mdetector.setinputoutput input_dir:/imCapVol/newImages  frame_filename:/imCapVol/newImages/cc20190327T175641_921.jpg
+[0m         output_dir:/imCapVol/output_redaction  loadimages:True verbosity:-1[37m
+[0m[33mdetector.load_images[37m
+[0mfilelist:['/imCapVol/newImages/cc20190327T175641_921.jpg']
+[0m  ==== image file names ===
+[0m/imCapVol/newImages/cc20190327T175641_921.jpg
+[0mReading frames...
+[0mSCALE_RATIO ok - not <1
+[0mimage_names:
+[0mcc20190327T175641_921.jpg
+self.images at load time jagged:False
+<class 'numpy.ndarray'>
+(1, 1200, 1600, 3)
+self.images[0] at load time
+<class 'numpy.ndarray'>
+(1200, 1600, 3)
+[0m[35mload_images step took:     0.023 secs[37m
+[0m[33mStarting detector.init_tf modelname:rfcn-res101  forceload:False
+[0m         self.modelname_key:m1  lastmodelloaded:[37m
+rfcn_resnet101_coco_2018_01_28Using model: 
+[0mname: "/device:CPU:0"
+device_type: "CPU"
+memory_limit: 268435456
+locality {
+}
+incarnation: 12670527538222272466
+
+name: "/device:XLA_CPU:0"
+device_type: "XLA_CPU"
+memory_limit: 17179869184
+locality {
+}
+incarnation: 10016591975072007454
+physical_device_desc: "device: XLA_CPU device"
+
+[0mdetector.init_tf loaded model rfcn_resnet101_coco_2018_01_28 in:     1.543 secs
+[0m[33mdetector.detect
+[0m   input_dir:/imCapVol/newImages frame_filename:/imCapVol/newImages/cc20190327T175641_921.jpg output_dir:/imCapVol/output_redaction verbosity:4
+[0m   boxplotlev:0 conflim:0.2 hitlist:vafsb_detected.csv numfcand:40 modelname:rfcn-res101
+[0m   pooldir: maxobjnum:0 numinfer:1[37m
+[0mjagged:False istep:50
+[0mtf now inferring away 0 of 1...
+[0m[35minference step took:     4.589 secs[37m
+[0m====   boxes    ====
+[0m<class 'numpy.ndarray'>
+[0m(1, 100, 4)
+[0m[[[0.17291631 0.7816437  0.4195329  0.9980458 ]
+  [0.08932506 0.66200596 0.16190198 0.80911916]
+  [0.31977245 0.9478273  0.50772357 1.        ]
+  [0.16389643 0.78282195 0.26122227 0.97299635]
+  [0.1749576  0.77823436 0.314099   0.9774141 ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]
+  [0.         0.         0.         0.        ]]]
+[0m====   scores   ====
+[0m<class 'numpy.ndarray'>
+[0m(1, 100)
+[0m[[0.99683315 0.9684388  0.9268194  0.9011714  0.57053494 0.
+  0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.        ]]
+[0m====   classes  ====
+[0m<class 'numpy.ndarray'>
+[0m(1, 100)
+[0m[[3. 3. 3. 3. 3. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+  1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]]
+[0m====   num      ====
+[0m<class 'numpy.ndarray'>
+[0m(1,)
+[0m[5.]
+[0m====================
+[0mDetect-found:0 conflim:0.2 class:person file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:bicycle file:cc20190327T175641_921.jpg scores:[]
+[0m[33mDetect-found:5 conflim:0.2 class:car file:cc20190327T175641_921.jpg scores:[0.99683315 0.9684388  0.92681938 0.90117139 0.57053494][37m
+[0mDetect-found:0 conflim:0.2 class:motorcycle file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:airplane file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:bus file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:train file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:truck file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:boat file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:traffic light file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:fire hydrant file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:stop sign file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:parking meter file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:bench file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:bird file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:cat file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:dog file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:horse file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:sheep file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:cow file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:elephant file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:bear file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:zebra file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:giraffe file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:backpack file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:umbrella file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:handbag file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:tie file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:suitcase file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:frisbee file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:skis file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:snowboard file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:sports ball file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:kite file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:baseball bat file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:baseball glove file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:skateboard file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:surfboard file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:tennis racket file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:bottle file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:wine glass file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:cup file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:fork file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:knife file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:spoon file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:bowl file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:banana file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:apple file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:sandwich file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:orange file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:broccoli file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:carrot file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:hot dog file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:pizza file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:donut file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:cake file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:chair file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:couch file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:potted plant file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:bed file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:dining table file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:toilet file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:tv file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:laptop file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:mouse file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:remote file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:keyboard file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:cell phone file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:microwave file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:oven file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:toaster file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:sink file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:refrigerator file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:book file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:clock file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:vase file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:scissors file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:teddy bear file:cc20190327T175641_921.jpg scores:[]
+[0mDetect-found:0 conflim:0.2 class:hair drier file:cc20190327T175641_921.jpg scores:[]
+[0mobjects-detected:5 classes-detected:1
+[0mhit-obj:cc20190327T175641_921.jpg,car,0.9968,0.1729,0.7816,0.4195,0.998
+[0mhit-obj:cc20190327T175641_921.jpg,car,0.9684,0.0893,0.662,0.1619,0.8091
+[0mhit-obj:cc20190327T175641_921.jpg,car,0.9268,0.3198,0.9478,0.5077,1.0
+[0mhit-obj:cc20190327T175641_921.jpg,car,0.9012,0.1639,0.7828,0.2612,0.973
+[0mhit-obj:cc20190327T175641_921.jpg,car,0.5705,0.175,0.7782,0.3141,0.9774
+[0mdetect_objects done - Hitlist stored in vafsb_detected.csv
+[0m[35mdetect total took:     4.593 secs[37m
+[0m[33mdetector.redact_objects
+[0m     input_dir:/imCapVol/newImages output_dir:/imCapVol/output_redaction redact_percentage:0.25
+[0m     boxplotlev:0 hitlist:vafsb_detected.csv pooldir: verbosity:4[37m
+[0mredact_objects reading image file:/imCapVol/newImages/cc20190327T175641_921.jpg
+[0mcropping class:car score:0.9968
+[0mcropping class:car score:0.9684
+[0mcropping class:car score:0.9268
+[0mcropping class:car score:0.9012
+[0mcropping class:car score:0.5705
+[0m
+redacted-image:/imCapVol/output_redaction/redacted_cc20190327T175641_921.jpg
+[0mredact_objects done. Metadata is saved to /imCapVol/output_redaction/metadata.json. Overlays: /imCapVol/output_redaction/cropped. Redacted images: /imCapVol/output_redaction/redacted
+[0m[35m
+cropped-image:/imCapVol/output_redaction/cropped/cropped_cc20190327T175641_921_0.jpg
+cropped-image:/imCapVol/output_redaction/cropped/cropped_cc20190327T175641_921_1.jpg
+cropped-image:/imCapVol/output_redaction/cropped/cropped_cc20190327T175641_921_2.jpg
+cropped-image:/imCapVol/output_redaction/cropped/cropped_cc20190327T175641_921_3.jpg
+cropped-image:/imCapVol/output_redaction/cropped/cropped_cc20190327T175641_921_4.jpg
+redacted-image:/imCapVol/output_redaction/redacted_cc20190327T175641_921.jpg
+redact_objects total took:     0.143 secs[37m
+[0m[33mdetector.doboxplots
+[0m     input_dir:/imCapVol/newImages output_dir:/imCapVol/output_redaction
+[0m     boxplotlev:0 hitlist:vafsb_detected.csv pooldir: verbosity:4[37m
+[0m/imCapVol/output_redaction/boxplots/bp_cc20190327T175641_921.jpg
+[0mfile:cc20190327T175641_921.jpg xpix:1600  ypix:1200 mode:RGB
+[0mboxplot-image:/imCapVol/output_redaction/boxplots/bp_cc20190327T175641_921.jpg
+[0mBoxplots saved in /imCapVol/output_redaction/boxplots/
+[0m[35mboxplot-image:/imCapVol/output_redaction/boxplots/bp_cc20190327T175641_921.jpg
+doboxplots total took:     1.277 secs[37m
+[0m[33mdetector.doboxplots
+[0m     input_dir:/imCapVol/newImages output_dir:/imCapVol/output_redaction
+[0m     boxplotlev:0 hitlist:vafsb_detected.csv pooldir: verbosity:4[37m
+[0m/imCapVol/output_redaction/boxplots/rbp_cc20190327T175641_921.jpg
+--- End of process output ---
+RunScoring took 8798.4844 ms or 8.7984844 secs - outputlines:235
+datetime now:2019-03-27 17:56:52.423
+line:[0mDetect-found:0 conflim:0.2 class:person file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:person
+line:[0mDetect-found:0 conflim:0.2 class:bicycle file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:bicycle
+line:[0m[33mDetect-found:5 conflim:0.2 class:car file:cc20190327T175641_921.jpg scores:[0.99683315 0.9684388  0.92681938 0.90117139 0.57053494][37m n:5 c:0.2 o:car
+line:[0mDetect-found:0 conflim:0.2 class:motorcycle file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:motorcycle
+line:[0mDetect-found:0 conflim:0.2 class:airplane file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:airplane
+line:[0mDetect-found:0 conflim:0.2 class:bus file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:bus
+line:[0mDetect-found:0 conflim:0.2 class:train file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:train
+line:[0mDetect-found:0 conflim:0.2 class:truck file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:truck
+line:[0mDetect-found:0 conflim:0.2 class:boat file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:boat
+line:[0mDetect-found:0 conflim:0.2 class:traffic light file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:traffic
+line:[0mDetect-found:0 conflim:0.2 class:fire hydrant file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:fire
+line:[0mDetect-found:0 conflim:0.2 class:stop sign file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:stop
+line:[0mDetect-found:0 conflim:0.2 class:parking meter file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:parking
+line:[0mDetect-found:0 conflim:0.2 class:bench file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:bench
+line:[0mDetect-found:0 conflim:0.2 class:bird file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:bird
+line:[0mDetect-found:0 conflim:0.2 class:cat file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:cat
+line:[0mDetect-found:0 conflim:0.2 class:dog file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:dog
+line:[0mDetect-found:0 conflim:0.2 class:horse file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:horse
+line:[0mDetect-found:0 conflim:0.2 class:sheep file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:sheep
+line:[0mDetect-found:0 conflim:0.2 class:cow file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:cow
+line:[0mDetect-found:0 conflim:0.2 class:elephant file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:elephant
+line:[0mDetect-found:0 conflim:0.2 class:bear file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:bear
+line:[0mDetect-found:0 conflim:0.2 class:zebra file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:zebra
+line:[0mDetect-found:0 conflim:0.2 class:giraffe file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:giraffe
+line:[0mDetect-found:0 conflim:0.2 class:backpack file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:backpack
+line:[0mDetect-found:0 conflim:0.2 class:umbrella file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:umbrella
+line:[0mDetect-found:0 conflim:0.2 class:handbag file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:handbag
+line:[0mDetect-found:0 conflim:0.2 class:tie file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:tie
+line:[0mDetect-found:0 conflim:0.2 class:suitcase file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:suitcase
+line:[0mDetect-found:0 conflim:0.2 class:frisbee file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:frisbee
+line:[0mDetect-found:0 conflim:0.2 class:skis file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:skis
+line:[0mDetect-found:0 conflim:0.2 class:snowboard file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:snowboard
+line:[0mDetect-found:0 conflim:0.2 class:sports ball file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:sports
+line:[0mDetect-found:0 conflim:0.2 class:kite file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:kite
+line:[0mDetect-found:0 conflim:0.2 class:baseball bat file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:baseball
+line:[0mDetect-found:0 conflim:0.2 class:baseball glove file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:baseball
+line:[0mDetect-found:0 conflim:0.2 class:skateboard file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:skateboard
+line:[0mDetect-found:0 conflim:0.2 class:surfboard file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:surfboard
+line:[0mDetect-found:0 conflim:0.2 class:tennis racket file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:tennis
+line:[0mDetect-found:0 conflim:0.2 class:bottle file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:bottle
+line:[0mDetect-found:0 conflim:0.2 class:wine glass file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:wine
+line:[0mDetect-found:0 conflim:0.2 class:cup file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:cup
+line:[0mDetect-found:0 conflim:0.2 class:fork file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:fork
+line:[0mDetect-found:0 conflim:0.2 class:knife file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:knife
+line:[0mDetect-found:0 conflim:0.2 class:spoon file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:spoon
+line:[0mDetect-found:0 conflim:0.2 class:bowl file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:bowl
+line:[0mDetect-found:0 conflim:0.2 class:banana file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:banana
+line:[0mDetect-found:0 conflim:0.2 class:apple file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:apple
+line:[0mDetect-found:0 conflim:0.2 class:sandwich file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:sandwich
+line:[0mDetect-found:0 conflim:0.2 class:orange file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:orange
+line:[0mDetect-found:0 conflim:0.2 class:broccoli file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:broccoli
+line:[0mDetect-found:0 conflim:0.2 class:carrot file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:carrot
+line:[0mDetect-found:0 conflim:0.2 class:hot dog file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:hot
+line:[0mDetect-found:0 conflim:0.2 class:pizza file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:pizza
+line:[0mDetect-found:0 conflim:0.2 class:donut file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:donut
+line:[0mDetect-found:0 conflim:0.2 class:cake file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:cake
+line:[0mDetect-found:0 conflim:0.2 class:chair file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:chair
+line:[0mDetect-found:0 conflim:0.2 class:couch file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:couch
+line:[0mDetect-found:0 conflim:0.2 class:potted plant file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:potted
+line:[0mDetect-found:0 conflim:0.2 class:bed file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:bed
+line:[0mDetect-found:0 conflim:0.2 class:dining table file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:dining
+line:[0mDetect-found:0 conflim:0.2 class:toilet file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:toilet
+line:[0mDetect-found:0 conflim:0.2 class:tv file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:tv
+line:[0mDetect-found:0 conflim:0.2 class:laptop file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:laptop
+line:[0mDetect-found:0 conflim:0.2 class:mouse file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:mouse
+line:[0mDetect-found:0 conflim:0.2 class:remote file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:remote
+line:[0mDetect-found:0 conflim:0.2 class:keyboard file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:keyboard
+line:[0mDetect-found:0 conflim:0.2 class:cell phone file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:cell
+line:[0mDetect-found:0 conflim:0.2 class:microwave file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:microwave
+line:[0mDetect-found:0 conflim:0.2 class:oven file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:oven
+line:[0mDetect-found:0 conflim:0.2 class:toaster file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:toaster
+line:[0mDetect-found:0 conflim:0.2 class:sink file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:sink
+line:[0mDetect-found:0 conflim:0.2 class:refrigerator file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:refrigerator
+line:[0mDetect-found:0 conflim:0.2 class:book file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:book
+line:[0mDetect-found:0 conflim:0.2 class:clock file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:clock
+line:[0mDetect-found:0 conflim:0.2 class:vase file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:vase
+line:[0mDetect-found:0 conflim:0.2 class:scissors file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:scissors
+line:[0mDetect-found:0 conflim:0.2 class:teddy bear file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:teddy
+line:[0mDetect-found:0 conflim:0.2 class:hair drier file:cc20190327T175641_921.jpg scores:[] n:0 c:0.2 o:hair
+hitobj:[0mhit-obj:cc20190327T175641_921.jpg,car,0.9968,0.1729,0.7816,0.4195,0.998
+Sending 609 bytes to output2
+SendTelemetry sending 609 bytes to output2 as msgTyp:hitMsg
+ objdet sending json objdetMessageFrame: {"messagetype":"hitMsg","objdetguid":"2ef78113-679e-4b60-985f-a0e7ab96766d","objsumguid":"f02bc8e8-f5ee-4d6e-992e-b2e2c010454a","basefname":"cc20190327T175641_921.jpg","capturetime":"2019-03-27T17:56:41.9210247+00:00","nodename":"abra","campose":"km47","objdettime":"2019-03-27T17:57:01.2229805+00:00","objdetnumdettime":"0001-01-01T00:00:00","objdetstrtime":"2019-03-27 17:56:52.423","objdetnumtime":17056052,"cls":"car","objname":"car0","subcls":"","score":0.9968,"bbox_0":0.1729,"bbox_1":0.7816,"bbox_2":0.4195,"bbox_3":0.998,"clr":"#4682b4","est_x":0.0,"est_y":0.0,"est_z":0.0,"est_azi":0.0,"est_ele":0.0} to output2
+hitobj:[0mhit-obj:cc20190327T175641_921.jpg,car,0.9684,0.0893,0.662,0.1619,0.8091
+Sending 609 bytes to output2
+SendTelemetry sending 609 bytes to output2 as msgTyp:hitMsg
+ objdet sending json objdetMessageFrame: {"messagetype":"hitMsg","objdetguid":"d497f2c2-f156-4ec6-a3d9-2d64a6d02f71","objsumguid":"f02bc8e8-f5ee-4d6e-992e-b2e2c010454a","basefname":"cc20190327T175641_921.jpg","capturetime":"2019-03-27T17:56:41.9210247+00:00","nodename":"abra","campose":"km47","objdettime":"2019-03-27T17:57:01.2263289+00:00","objdetnumdettime":"0001-01-01T00:00:00","objdetstrtime":"2019-03-27 17:56:52.423","objdetnumtime":17056052,"cls":"car","objname":"car1","subcls":"","score":0.9684,"bbox_0":0.0893,"bbox_1":0.662,"bbox_2":0.1619,"bbox_3":0.8091,"clr":"#4682b4","est_x":0.0,"est_y":0.0,"est_z":0.0,"est_azi":0.0,"est_ele":0.0} to output2
+hitobj:[0mhit-obj:cc20190327T175641_921.jpg,car,0.9268,0.3198,0.9478,0.5077,1.0
+Sending 607 bytes to output2
+SendTelemetry sending 607 bytes to output2 as msgTyp:hitMsg
+ objdet sending json objdetMessageFrame: {"messagetype":"hitMsg","objdetguid":"91829f92-2135-4075-a909-941ea4e2c505","objsumguid":"f02bc8e8-f5ee-4d6e-992e-b2e2c010454a","basefname":"cc20190327T175641_921.jpg","capturetime":"2019-03-27T17:56:41.9210247+00:00","nodename":"abra","campose":"km47","objdettime":"2019-03-27T17:57:01.2271836+00:00","objdetnumdettime":"0001-01-01T00:00:00","objdetstrtime":"2019-03-27 17:56:52.423","objdetnumtime":17056052,"cls":"car","objname":"car2","subcls":"","score":0.9268,"bbox_0":0.3198,"bbox_1":0.9478,"bbox_2":0.5077,"bbox_3":1.0,"clr":"#4682b4","est_x":0.0,"est_y":0.0,"est_z":0.0,"est_azi":0.0,"est_ele":0.0} to output2
+hitobj:[0mhit-obj:cc20190327T175641_921.jpg,car,0.9012,0.1639,0.7828,0.2612,0.973
+Sending 609 bytes to output2
+SendTelemetry sending 609 bytes to output2 as msgTyp:hitMsg
+ objdet sending json objdetMessageFrame: {"messagetype":"hitMsg","objdetguid":"f0910d4e-4cf6-4e43-b37e-614a3184d343","objsumguid":"f02bc8e8-f5ee-4d6e-992e-b2e2c010454a","basefname":"cc20190327T175641_921.jpg","capturetime":"2019-03-27T17:56:41.9210247+00:00","nodename":"abra","campose":"km47","objdettime":"2019-03-27T17:57:01.2280029+00:00","objdetnumdettime":"0001-01-01T00:00:00","objdetstrtime":"2019-03-27 17:56:52.423","objdetnumtime":17056052,"cls":"car","objname":"car3","subcls":"","score":0.9012,"bbox_0":0.1639,"bbox_1":0.7828,"bbox_2":0.2612,"bbox_3":0.973,"clr":"#4682b4","est_x":0.0,"est_y":0.0,"est_z":0.0,"est_azi":0.0,"est_ele":0.0} to output2
+hitobj:[0mhit-obj:cc20190327T175641_921.jpg,car,0.5705,0.175,0.7782,0.3141,0.9774
+Sending 608 bytes to output2
+SendTelemetry sending 608 bytes to output2 as msgTyp:hitMsg
+ objdet sending json objdetMessageFrame: {"messagetype":"hitMsg","objdetguid":"7aed58c8-4b00-4686-a2c7-a988a842f3f2","objsumguid":"f02bc8e8-f5ee-4d6e-992e-b2e2c010454a","basefname":"cc20190327T175641_921.jpg","capturetime":"2019-03-27T17:56:41.9210247+00:00","nodename":"abra","campose":"km47","objdettime":"2019-03-27T17:57:01.228614+00:00","objdetnumdettime":"0001-01-01T00:00:00","objdetstrtime":"2019-03-27 17:56:52.423","objdetnumtime":17056052,"cls":"car","objname":"car4","subcls":"","score":0.5705,"bbox_0":0.175,"bbox_1":0.7782,"bbox_2":0.3141,"bbox_3":0.9774,"clr":"#4682b4","est_x":0.0,"est_y":0.0,"est_z":0.0,"est_azi":0.0,"est_ele":0.0} to output2
+Found redacted-image filepath:/imCapVol/output_redaction/redacted_cc20190327T175641_921.jpg
+Found cropped-image filepath:/imCapVol/output_redaction/cropped/cropped_cc20190327T175641_921_0.jpg
+Found cropped-image filepath:/imCapVol/output_redaction/cropped/cropped_cc20190327T175641_921_1.jpg
+Found cropped-image filepath:/imCapVol/output_redaction/cropped/cropped_cc20190327T175641_921_2.jpg
+Found cropped-image filepath:/imCapVol/output_redaction/cropped/cropped_cc20190327T175641_921_3.jpg
+Found cropped-image filepath:/imCapVol/output_redaction/cropped/cropped_cc20190327T175641_921_4.jpg
+Found redacted-image filepath:/imCapVol/output_redaction/redacted_cc20190327T175641_921.jpg
+Found boxplot-image filepath:/imCapVol/output_redaction/boxplots/bp_cc20190327T175641_921.jpg
+Found boxplot-image filepath:/imCapVol/output_redaction/boxplots/bp_cc20190327T175641_921.jpg
+Sending 940 bytes to output1
+SendTelemetry sending 940 bytes to output1 as msgTyp:sumMsg
+ objdet sending json objdetMessageFrame: {"messagetype":"sumMsg","objsumguid":"f02bc8e8-f5ee-4d6e-992e-b2e2c010454a","capturetime":"2019-03-27T17:56:41.9210247+00:00","nodename":"abra","comment":"not daemonized","camlabel":"IQeye852","camcomment":"Redwest G garage - km47 camera","campose":"km47","basefname":"cc20190327T175641_921.jpg","pathfname":"/imCapVol/newImages/cc20190327T175641_921.jpg","framebytes":182763,"objdettime":"2019-03-27T17:56:52.4231605+00:00","objdetnumtime":17056052,"objdetstrtime":"2019-03-27 17:56:52.423","pyprocesselap":8.7984844,"statussummary":"abra found 5 relevant objects at 03/27/2019 17:56:52","randomint":80,"numimages":2,"personcount":0,"carvehiclecount":5,"carcount":5,"truckcount":0,"buscount":0,"traincount":0,"birdcount":0,"totalcount":5,"pyfreemem":0.0,"pyfreememk":0,"modulename":"objdet","moduleuptime":88.4649658,"moduleuptimehr":0.02457360161111111,"modulecycles":4,"modulefaults":0,"moduleworkingset":67440640.0,"modulecpusecs":1.27} to output1
+Sending 1044 bytes to output3
+SendTelemetry sending 1044 bytes to output3 as msgTyp:frameTranMsg
+ objdet sending json objdetMessageFrame: {"messagetype":"frameTran","objsumguid":"f02bc8e8-f5ee-4d6e-992e-b2e2c010454a","capturetime":"2019-03-27T17:56:41.9210247+00:00","nodename":"abra","comment":"not daemonized","camlabel":"IQeye852","camcomment":"Redwest G garage - km47 camera","campose":"km47","basefname":"cc20190327T175641_921.jpg","pathfname":"/imCapVol/newImages/cc20190327T175641_921.jpg","bppathfname":"/imCapVol/output_redaction/boxplots/bp_cc20190327T175641_921.jpg","rdpathfname":"/imCapVol/output_redaction/redacted_cc20190327T175641_921.jpg","crppathfname":"/imCapVol/output_redaction/cropped/cropped_cc20190327T175641_921_0.jpg,/imCapVol/output_redaction/cropped/cropped_cc20190327T175641_921_1.jpg,/imCapVol/output_redaction/cropped/cropped_cc20190327T175641_921_2.jpg,/imCapVol/output_redaction/cropped/cropped_cc20190327T175641_921_3.jpg,/imCapVol/output_redaction/cropped/cropped_cc20190327T175641_921_4.jpg,","objdettime":"2019-03-27T17:56:52.4231605+00:00","objdetnumtime":17056052,"objdetstrtime":"2019-03-27 17:56:52.423","newimagesdir":"/imCapVol/newImages"} to output3
+fileCleanup cleanplev:0 dirname:/imCapVol/newImages

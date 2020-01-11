@@ -1,0 +1,2 @@
+#!/bin/bash
+mlagents-learn config/trainer_config.yaml  -–train --run-id=runname_1
