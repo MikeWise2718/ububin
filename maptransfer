@@ -1,0 +1,4 @@
+#!/bin/bash
+smbclient -L 192.168.25.194 -U mike
+sudo mount -t cifs -o username=mike //192.168.25.194/transfer /mnt/snorlax_transfer/
+ls /mnt/snorlax_transfer
