@@ -1,0 +1,3 @@
+cd ~/ov/isaac_lerobot
+source bin/activate
+source ur5_simulation/install/setup.bash

@@ -17,8 +17,7 @@ shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=10000
-HISTFILESIZE=10000
-HISTTIMEFORMAT="%h %d %H:%M:%S|"
+HISTFILESIZE=20000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -39,13 +38,12 @@ fi
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
-    xterm) color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-force_color_prompt=yes
+#force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -59,7 +57,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -118,22 +116,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export PATH=/usr/local/cuda-10.1/bin${PATH:+:${PATH}}
-export PATH=/usr/local/cuda-9.0/bin${PATH:+:${PATH}}
-export LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
-export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
-export CUPIT_LIB_PATH=${OPT_PATH}/cuda/toolkit_9.0/cuda/extras/CUPTI/lib64
-export LD_LIBRARY_PATH=${CUPIT_LIB_PATH}:$LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
-export TF_OD_ZOO_PATH=/home/mike/tfrepos/models/research/object_detection
-
-# From the tensorflow/models/research/ directory
-export PIPELINE_CONFIG_PATH=/home/mike/tfrepos/models/research/eshrima.config
-export MODEL_DIR=/home/mike/tfrepos/models/research/
-export NUM_TRAIN_STEPS=50000
-export SAMPLE_1_OF_N_EVAL_EXAMPLES=1
-export PYTHONPATH=$PYTHONPATH:/home/mike/tfrepos/models/research:/home/mike/tfrepos/models/research/slim:/home/mike/UnityProjects/ml-agents/ml-agents:/home/mike/UnityProjects/ml-agents/ml-agents-envs
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/mike/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
@@ -149,3 +131,21 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# fnm
+FNM_PATH="/home/mike/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "`fnm env`"
+fi
+LS_COLORS=$LS_COLORS:'di=0;36:' ; export LS_COLORS
+# Isaac Sim root directory
+export ISAACSIM_PATH="${HOME}/.local/share/ov/pkg/isaac-sim-4.2.0"
+# Isaac Sim python executable
+export ISAACSIM_PYTHON_EXE="${ISAACSIM_PATH}/python.sh"
+cd ~
+export PATH="~/ububin:$PATH"
+source /opt/ros/humble/setup.bash
+echo "ROS2 Humble enabled"
+export CUDA_HOME=/usr/local/cuda-12.4
+export PATH=/usr/local/cuda-12.4/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-12.4/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}

@@ -1,0 +1,1 @@
+bash ./start-sim1.sh -r RobotRed -c -1 -d 52 -j 1000 -b "/blue/joy" -v 3000 -f "/image_raw"
